@@ -1,0 +1,95 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: #858796;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.regester-box {
+    justify-content: center!important;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+.register-box1 {
+    position: relative;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.register-box2 {
+    overflow: hidden;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
+    border: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border-radius: 0.35rem;
+}
+.register-box3 {
+    padding: 0;
+    flex: 1 1 auto;
+    min-height: 1px;
+}
+.register-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+}
+.register-row-left {
+    background-color: bisque;
+    background-position: center;
+    background-size: cover;
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.register-row-right {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+}
+.register-row-right-p {
+    padding: 3rem;
+}
+
+
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    .register-box1 {
+        flex: 0 0 83.33333%;
+        max-width: 83.33333%;
+    }
+}
+@media (min-width: 992px) {
+    .register-row-left {
+        display: block;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    .register-row-right {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
