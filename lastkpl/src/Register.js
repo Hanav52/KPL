@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Main.css'
+import Join from './RegisterTest';
 
 export default function RegisterCopo() {
     return (
@@ -10,7 +11,7 @@ export default function RegisterCopo() {
                         <div className='register-row-left'>
                         </div>
                         <div className='register-row-right'>
-                            회원가입
+                            <Join/>
                         </div>
                     </div>
                 </div>

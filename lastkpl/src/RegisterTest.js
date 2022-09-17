@@ -7,11 +7,11 @@ import Container from 'react-bootstrap/Container';
 import { BrowserRouter, Link, Route, Router } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../css/RRegister.css'
 import axios from 'axios';
 // import Popup from './Popup';
 import { Avatar, Typography } from '@mui/material';
 import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
+import './stylemain.css'
 
 function Copyright(props) {
     return (
