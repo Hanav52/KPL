@@ -8,7 +8,7 @@ import { BrowserRouter, Link, Route, Router } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
-// import Popup from './Popup';
+import Popup from './Popup';
 import { Avatar, Typography } from '@mui/material';
 import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
 import './stylemain.css'
@@ -26,7 +26,7 @@ function Copyright(props) {
     );
   }
 
-function Join() {
+function RegisterTest() {
     const [popup, setPopup] = useState({open: false, title: "", message: "", callback: false});
     // id, password, confirmuserid, confirmpassword 확인하는 구간
     const [userId, setUserId] = useState("");
@@ -133,10 +133,9 @@ function Join() {
           </Avatar>
             회원가입
           </Typography>
-        {/* <Popup open = {popup.open} setPopup = {setPopup} message = {popup.message} title = {popup.title} callback = {popup.callback}/> */}
+        <Popup open = {popup.open} setPopup = {setPopup} message = {popup.message} title = {popup.title} callback = {popup.callback}/>
             <Container className="panel">
                 <Form>
-                
                     <Form.Group as={Row} className="mb-3">
                         <Col sm>
                             <Form.Control maxLength={20} placeholder="아이디" value={userId} onChange={onChangeUserId}/>
@@ -161,7 +160,24 @@ function Join() {
                         </Col>
                     </Form.Group>
                     </div>
-                    <br />
+                    {['checkbox'].map((type) => (
+                        <div key={`inline-${type}`} className="mb-3">
+                        <Form.Check
+                            inline
+                            label="남자"
+                            name="group1"
+                            type={type}
+                            id={`inline-${type}-1`}
+                        />
+                        <Form.Check
+                            inline
+                            label="여자"
+                            name="group1"
+                            type={type}
+                            id={`inline-${type}-2`}
+                        />
+                        </div>
+                    ))}
                     <div className="d-grid gap-1">
                     <Button variant="warning" onClick={onSubmit} disabled={!register} style={{width: '626px'}}>
                             회원가입
@@ -179,4 +195,4 @@ function Join() {
     );
 }
 
-export default Join
+export default RegisterTest
