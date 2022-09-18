@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import SignIn from './Login';
+import LoginTest from './LoginTest';
 import App from './Redux/Props';
+import RegisterCopo from './Register';
 import Register from './Register';
 import Join from './RegisterTest';
 import reportWebVitals from './reportWebVitals';
@@ -8,7 +11,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Join/>
+    <RegisterCopo/>
   </React.StrictMode>
 );
 
