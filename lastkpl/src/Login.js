@@ -41,13 +41,13 @@ export default function SignIn() {
     const history = useHistory({forceRefresh: true});
     const [userId, setUserId] = useState("");
     const [password, setPassword] = useState("");
-    const data = { id: userId, password: password };
+    const data = { id: userId, pw: password };
     const [state, setState] = useState(false);
 
     axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
     // axios.defaults.withCredentials = true;
     const onSubmit = (e) => {
-            axios.post('http://bestinwoo.hopto.org:8080/auth/login', data, {
+            axios.post('http://35.89.73.172:3000/auth/login', data, {
                 headers: {
                 'Content-Type': 'application/json'
                 }
