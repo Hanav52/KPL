@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from 'react-bootstrap/Row';
@@ -13,6 +13,7 @@ import { Avatar, Typography } from '@mui/material';
 import DriveFileRenameOutlineRoundedIcon from '@mui/icons-material/DriveFileRenameOutlineRounded';
 import './stylemain.css'
 import { ConstructionOutlined } from '@mui/icons-material';
+import { getIdCheck, getRegister } from './API'
 
 function Copyright(props) {
     return (
@@ -69,7 +70,7 @@ function RegisterTest() {
     };
     const onSex = (e) => {
         if (sex === e.target.value) setSexError(false);
-        else setSexError(true);
+        else setSexError(false);
         setSex(e.target.value);
     }
     const onChangeName = (e) => {
@@ -87,7 +88,7 @@ function RegisterTest() {
         if(!password) setPasswordError(true);
         if(!confirmPassword) setConfirmPasswordError(true);
         if(!confirmUserId) setConfirmUserId(true);
-        if(!sex) setSexError(true);
+        if(!sex) setSexError(false);
         if(userId && password && confirmUserId && confirmPassword && sex && name) return true;
         else return false;
     }
@@ -95,19 +96,18 @@ function RegisterTest() {
  
 
     const data = { name: name, id: userId, pw: password, sex: sex };
+    const data1 = { userId: userId}
 
-    axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
-
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         if(validation()) {
-            axios.post('http://35.89.73.172:3000/auth/newuser', data, {
-                headers: {
-                'Content-Type': 'application/json'
-                }
-              }
-            ).then(function (response) {
-                console.log(response)
-                if(response.data.count == 1) {
+            try {
+                const response = await getRegister(data, {headers: {
+                    headers: {
+                    'Content-Type': 'application/json'
+                    }
+                  }});
+                console.log(response);
+                if(response.data.count === 1) {
                     setPopup({
                         open: true,
                         title: "가입 축하드립니다.",
@@ -116,30 +116,33 @@ function RegisterTest() {
                             history.push("/login");
                         }
                     })
-                    
                 }
-            }).catch(function (error) {
-                
-            }).then(function() {
+            } catch (e) {
+               console.error(e);
+            }  
+        }  return;
+    };
 
-            })
-        }return;
-    }
-    const onIdSubmit = (e) => {
-        axios.get(`http://35.89.73.172:3000/auth/newidcheck` , userId , {
-            headers: {
-                'Content-Type': 'application/json'
-                }
-        })
-             .then(function (response) {
-                console.log(response)
-                 alert(response.data);
-                 setRegister(true);
-                }).catch(function (error) {
-                alert("아이디를 다시 입력하세요.")
-                })
+    const onIdSubmit = async (e) => {
+        try {
+            const response = await getIdCheck(data1, userId);
+            console.log(response)
+        } catch (e) {
+           console.error(e);
+        }
+
+
+        // axios.get(`http://35.89.73.172:3000/auth/newidcheck/${userId}`, data1)
+        //      .then(function (response) {
+        //         console.log(response)
+        //          alert(response.data);
+        //          setRegister(true);
+        //         }).catch(function (error) {
+        //         alert("아이디를 다시 입력하세요.")
+        //         console.log(error)
+        //         })
         
-        return;
+        // return;
     }
     return (
         <BrowserRouter>
