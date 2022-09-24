@@ -1,0 +1,286 @@
+/* 공통부분 */
+.wrapper {
+    width: 1366px;
+    position: relative;
+    margin: 0 auto;
+}
+li {
+    list-style: none;
+}
+/* header 부분 css */
+.header {
+    padding-bottom: 10px;
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.topBanner {
+    background: #1c1c1c;
+    display: none;
+    position: relative;
+    min-width: 1310px;
+    overflow: hidden;
+}
+.header_top {
+    margin: 15px 0;
+}
+.header_top .wrapper {
+    text-align: right;
+}
+.gnd {
+    display: inline-block;
+    text-align: right;
+}
+.gnd li:nth-child(1) {
+    margin-top: 0;
+}
+.gnd li {
+    margin-right: 24px;
+    float: left;
+    margin-top: 4px;
+}
+.gnd li a {
+    font-size: 12px;
+}
+.abcd {
+    font-size: 12px;
+}
+.header_mid {
+    margin-bottom: 24px;
+}
+.header_btm {
+    position: relative;
+}
+.nav_box {
+    box-sizing: border-box;
+    padding: 0 6px;
+}
+.nav {
+    position: relative;
+    margin-right: 42px;
+    display: inline-block !important;
+    vertical-align: middle;
+}
+.nav li {
+    margin-right: 15px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nav .menu_btn {
+    position: relative;
+    width: 23px;
+    height: 17px;
+}
+button {
+    background: transparent;
+    vertical-align: middle;
+    overflow: hidden;
+    cursor: pointer;
+    border: 0 none;
+}
+button span {
+    visibility: visible;
+}
+.nav .menu_btn .line01 {
+    top: 0;
+}
+.nav .menu_btn .line02 {
+    top: 7px;
+}
+.nav .menu_btn .line03 {
+    top: 14px;
+}
+.nav .menu_btn.open .line01 {
+    top: 7px;
+    transform: rotate(45deg);
+}
+.nav .menu_btn.open .line02 {
+    display: none;
+}
+.nav .menu_btn.open .line03 {
+    top: 7px;
+    transform: rotate(135deg);
+    width: 23px !important;
+}
+.nav .menu_btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0px;
+    transition: all 0.3s ease 0s;
+}
+.nav.point .item {
+    font-weight: 700;
+    font-size: 18px;
+}
+.nav .item {
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    height: 54px;
+    line-height: 54px;
+    letter-spacing: 0.25px;
+    vertical-align: top;
+    transition: all 0.3s ease-out 0.1s;
+    font-weight: 400;
+}
+.sub_nav {
+    display: none;
+    position: absolute;
+    top: 54px;
+    left: calc(50% - 50px);
+    width: 162px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #dddddd;
+    padding: 17px 30px;
+    z-index: 200px;
+}
+.sub_nav .sub_item {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+.nav:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 19px;
+    background: rgb(165, 165,165);
+    position: absolute;
+    right: -20px;
+    top: calc(50% - 9.5px);
+}
+.all_menu_box {
+    display: none;
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dddddd;
+    padding: 60px 30px 65px;
+    z-index: 10;
+    background: #fff;
+    z-index: 100000;
+}
+.menu_box:nth-child(1) {
+    width: 286px;
+}
+.menu_box {
+    display: inline-block;
+    float: left;
+    margin-right: 32px;
+    padding-right: 32px;
+    min-height: 394px;
+    border-right: 1px solid #d9d9d9;
+    position: relative;
+    box-sizing: border-box;
+    width: 192px;
+}
+.menu_list li {
+    margin-bottom: 26px;
+    display: flex;
+    align-items: center;
+}
+.menu_list li .item {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    letter-spacing: 1px;
+}
+.menu_list li .sub_item {
+    font-size: 13px;
+    color: #999;
+    font-weight: noraml;
+    letter-spacing: 0px;
+    margin-left: 6px;
+}
+.menu_box:nth-child(2) {
+    width: 534px;
+}
+.flexNone {
+    display: inline-block;
+}
+.personal_list {
+    margin-bottom: 32px;
+}
+.personal_list:last-child {
+    margin-bottom: 0;
+}
+.personal_list dt {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+.personal_list dd {
+    display: block;
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0px;
+}
+.personal_list dd a {
+    display: block;
+    margin-bottom: 16px;
+}
+
+
+
+
+/* footer 부분 css */
+.footer {
+    padding: 32px 0 62px;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ft_info_box {
+    display: inline-block;
+}
+.ft_info_box .shop_info{
+    display: inline-block;
+    color: #999;
+    font-size: 12px;
+}
+.ft_info_box .copy{
+    color: #999;
+    font-size: 12px;
+}
+.ft_logo {
+    margin-bottom: 20px;
+}
+.ft_link {
+    display: flex;
+    margin-bottom: 20xp;
+}
+.link {
+    color: #1c1c1c;
+    font-size: 12px;
+    margin-right: 12px;
+}
+.ft_info_box.last {
+    float: right;
+    padding-top: 10px;
+}
+.ft_info {
+    margin-right: 89px;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+.ft_info dt {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
