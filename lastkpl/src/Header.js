@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import Hcompo from './HeaderMenu';
-import './Main.css'
-import Join from './RegisterTest';
 
 export default function HeaderMenu() {
     return (
-        <>
+        <BrowserRouter>
             <Hcompo/>
-        </>
+        </BrowserRouter>
     )
 }
