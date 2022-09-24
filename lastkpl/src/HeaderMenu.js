@@ -1,11 +1,38 @@
 import { Button } from '@mui/material';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getMainCategory, getRecent } from './API';
 import './RealMain.css'
 
 export default function Hcompo() {
 
     const [state, setState] = useState(true)
+
+    // 카테고리 API 저장
+    const [newbest, setNewBest] = useState([]);
+    const [category, setCategory] = useState([]);
+
+    const Category = async (e) => {
+        try {
+            const response = await getMainCategory();
+                console.log(response.data)
+                setNewBest(response.data.data1);
+                setCategory(response.data.data2);
+        } catch (e) {
+           console.error(e);
+        }
+    }
+    const Category1 = async (e) => {
+        try {
+            const response = await getRecent();
+                console.log(response)
+        } catch (e) {
+           console.error(e);
+        }
+    }
+    useEffect(()=> {
+        Category1();
+    },[])
 
     return (
         <div className="header">
@@ -53,120 +80,43 @@ export default function Hcompo() {
                                     <span className='line03'></span>
                                 </button>
                             </li>
-                            <li>
-                                <Link className='item dot'>NEW</Link>
+                            {newbest.map(({categoryid, categoryname}) => (
+                            <li key={categoryid}>
+                                <Link className='item dot'>{categoryname}</Link>
                             </li>
-                            <li>
-                                <Link className='item dot'>BEST</Link>
-                            </li>
+                            ))}
                         </ul>
                         <ul className='nav'>
+                        {category.map(({ categoryid, categoryname }) => (
                             <li>
-                                <Link className='item'>TOP</Link>
-                                <div className='sub_nav'>
-                                    <Link className='sub_item'>티셔츠</Link>
-                                    <Link className='sub_item'>맨투맨&후디</Link>
-                                    <Link className='sub_item'>블라우스&셔츠</Link>
-                                    <Link className='sub_item'>니트</Link>
-                                </div>
+                                <Link className='item' key={categoryid}>{categoryname}</Link>
                             </li>
-                            <li>
-                                <Link className='item'>PANTS</Link>
-                                <div className='sub_nav'>
-                                    <Link className='sub_item'>배기</Link>
-                                    <Link className='sub_item'>세미와이드</Link>
-                                    <Link className='sub_item'>와이드</Link>
-                                    <Link className='sub_item'>스트레이트</Link>
-                                    <Link className='sub_item'>트레이닝</Link>
-                                    <Link className='sub_item'>부츠</Link>
-                                </div>
-                            </li>
-                            <li>
-                                <Link className='item'>OUTER</Link>
-                                <div className='sub_nav'>
-                                    <Link className='sub_item'>코트</Link>
-                                    <Link className='sub_item'>자켓</Link>
-                                    <Link className='sub_item'>점퍼</Link>
-                                    <Link className='sub_item'>가디건</Link>
-                                    <Link className='sub_item'>조끼</Link>
-                                </div>
-                            </li>
-                            <li>
-                                <Link className='item'>SKIRT</Link>
-                                <div className='sub_nav'>
-                                    <Link className='sub_item'>스커트</Link>
-                                </div>
-                            </li>
-                            <li>
-                                <Link className='item'>Shoes&Bags</Link>
-                                <div className='sub_nav'>
-                                    <Link className='sub_item'>신발</Link>
-                                    <Link className='sub_item'>가방</Link>
-                                </div>
-                            </li>
+                        ))}
                         </ul>
                     </div>
                     <div className='all_menu_box' style={state ? {display: "none"} : {display: "block"}} >
                         <div className='all_menu_inner'>
                             <div className='menu_box'>
                                 <ul className='menu_list'>
-                                    <li>
-                                        <Link className='item'>NEW
-                                        <span className='sub_item'>신상품 매일 자정 오픈</span>
+                                    {newbest.map(({categoryid, categoryname, subcategory}) => (
+                                    <li key={categoryid}>
+                                        <Link className='item'>{categoryname}
+                                        <span className='sub_item'>{subcategory}</span>
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link className='item'>BEST
-                                        <span className='sub_item'>가장 많이 조회한 상품</span>
-                                        </Link>
-                                    </li>
+                                    ))}
                                 </ul>
                             </div>
                             <div className='menu_box'>
                                 <ul className='menu_list'>
+                                    {category.map(({categoryid, categoryname, subcategory}) => (
                                     <li>
-                                        <Link className='item'>TOP</Link>
+                                        <Link className='item' key={categoryid}>{categoryname}</Link>
                                         <div className='sub_item'>
-                                            <Link>티셔츠</Link>
-                                            <Link>맨투맨&후디</Link>
-                                            <Link>블라우스&셔츠</Link>
-                                            <Link>니트</Link>
+                                                <Link>{subcategory}</Link>
                                         </div>
                                     </li>
-                                    <li>
-                                        <Link className='item'>PANTS</Link>
-                                        <div className='sub_item'>
-                                            <Link>배기</Link>
-                                            <Link>세미와이드</Link>
-                                            <Link>와이드</Link>
-                                            <Link>스트레이트</Link>
-                                            <Link>트레이닝</Link>
-                                            <Link>부츠</Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <Link className='item'>OUTER</Link>
-                                        <div className='sub_item'>
-                                            <Link>코트</Link>
-                                            <Link>자켓</Link>
-                                            <Link>점퍼</Link>
-                                            <Link>가디건</Link>
-                                            <Link>조끼</Link>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <Link className='item'>SKIRT</Link>
-                                        <div className='sub_item'>
-                                            <Link>스커트</Link>
-                                        </div>
-                                    </li>
-                                    <li className='flexNone'>
-                                        <Link className='item'>Shoes&Bags</Link>
-                                        <div className='sub_item'>
-                                            <Link>신발</Link>
-                                            <Link>가방</Link>
-                                        </div>
-                                    </li>
+                                ))}
                                 </ul>
                             </div>
                             <div className='menu_box'>
