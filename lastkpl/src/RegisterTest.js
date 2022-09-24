@@ -96,7 +96,7 @@ function RegisterTest() {
  
 
     const data = { name: name, id: userId, pw: password, sex: sex };
-    const data1 = { userId: userId}
+    const data1 = { data: userId }
 
     const onSubmit = async (e) => {
         if(validation()) {
@@ -125,25 +125,20 @@ function RegisterTest() {
 
     const onIdSubmit = async (e) => {
         try {
-            const response = await getIdCheck(data1, userId);
-            console.log(response)
+            const response = await getIdCheck(userId)
+            .then(function (response) {
+                alert(response.data);
+                setRegister(true);
+            })
+            .then(function (error) {
+                alert("아이디를 다시 입력하세요.")
+                console.log(error)
+            })
         } catch (e) {
            console.error(e);
         }
-
-
-        // axios.get(`http://35.89.73.172:3000/auth/newidcheck/${userId}`, data1)
-        //      .then(function (response) {
-        //         console.log(response)
-        //          alert(response.data);
-        //          setRegister(true);
-        //         }).catch(function (error) {
-        //         alert("아이디를 다시 입력하세요.")
-        //         console.log(error)
-        //         })
-        
-        // return;
     }
+    
     return (
         <BrowserRouter>
         <Route path="/register">
