@@ -11,7 +11,12 @@ export const getRegister = async (data, header) => {
     return response;
 }
 // 아이디 중복확인 API
-export const getIdCheck = async (data, userId) => {
-    const response = await instance.get(`/auth/newidcheck/${userId}`, {data})
+export const getIdCheck = async (userId) => {
+    const response = await instance.get(`/auth/newidcheck/${userId}`, userId)
     return response;
+}
+// 대분류 카테고리 API
+export const getBigCategory = async () => {
+  const response = await instance.get()
+  return response;
 }
