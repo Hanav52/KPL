@@ -35,8 +35,6 @@ function Copyright(props) {
   );
 }
 
-
-
 export default function SignIn() {
     const history = useHistory({forceRefresh: true});
     const [userId, setUserId] = useState("");

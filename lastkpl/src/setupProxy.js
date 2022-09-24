@@ -7,10 +7,10 @@ module.exports = function(app){
             changeOrigin: true
         })
 )
-app.use(
-    createProxyMiddleware('/newidcheck', {
-        target: 'http://35.89.73.172:3000/auth',
-        changeOrigin: true
-    })
-)
+// app.use(
+//     createProxyMiddleware('/newidcheck', {
+//         target: 'http://35.89.73.172:3000/auth',
+//         changeOrigin: true
+//     })
+// )
 };

@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import CoComponent from './ContentComponent';
+import HeaderMenu from './Header';
 import SignIn from './Login';
 import App from './Redux/Props';
 import RegisterCopo from './Register';
@@ -11,7 +13,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SignIn/>
+    <HeaderMenu/>
   </React.StrictMode>
 );
 
