@@ -16,7 +16,13 @@ export const getIdCheck = async (userId) => {
     return response;
 }
 // 대분류 카테고리 API
-export const getBigCategory = async () => {
-  const response = await instance.get()
+export const getMainCategory = async () => {
+  const response = await instance.get(`/category`)
   return response;
 }
+// 최신 게시글 API
+export const getRecent = async () => {
+  const response = await instance.get(`/recent`)
+  return response;
+}
+// 카테고리별 페이지 API
