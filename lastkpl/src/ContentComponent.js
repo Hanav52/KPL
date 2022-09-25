@@ -1,7 +1,6 @@
-import { Button } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
+import './RealMain.css'
 
 // ImageSlide 함수
 function ImageSlide() {
@@ -10,7 +9,7 @@ function ImageSlide() {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="holder.js/800x400?text=First slide&bg=373940"
+            src=""
             alt="First slide"
           />
           <Carousel.Caption>
@@ -54,7 +53,7 @@ export default function CoComponent() {
             <div className='visual_box'>
                 <ImageSlide/>
             </div>
-            <div className='section'>
+            <div className='section' id='timeBest'>
                 <div className='wrapper'>
                     <div className='tt_box'>
                         <h3 className='tt'>
@@ -65,22 +64,88 @@ export default function CoComponent() {
                     <div className='contain'>
                         <div className='product_list_box'>
                             <ul className='item-cont'>
-                                <li className='item-list bestitem'>
+                                <li className='item-list slick-slide madeProudct'>
                                     <dl className='thumb'>
-                                        <dt className='이미지 들어가는곳'></dt>
+                                        <dt>
+                                            <div><img src='blank'></img> </div>
+                                        </dt>
                                         <dd className='item_info'>
                                             <div className='item_top'>
                                                 <p className='colorinfo'>
-                                                    <div className='cloth-color'></div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
                                                 </p>
-                                                <p className='listSubname'></p>
-
+                                                <p className='listSubname'>S, M, L, XL</p>
                                             </div>
                                             <div className='item_name'>
-                                                <div>조엘 자수 후드 맨투맨</div>
+                                                <div className='namename'>[r]F/W 조엘 자수 후드 맨투맨</div>
                                             </div>
                                             <div className='item_prive'>
-                                                <div className='price'>29,800</div>
+                                                <span className='price'>29,800</span>
+                                            </div>
+                                            <div className='item_productview'>
+                                                <div>조회수</div>
+                                            </div>
+                                            <div className='prd-ico'></div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li className='item-list slick-slide madeProudct'>
+                                    <dl className='thumb'>
+                                        <dt>
+                                            <div><img src='blank'></img> </div>
+                                        </dt>
+                                        <dd className='item_info'>
+                                            <div className='item_top'>
+                                                <p className='colorinfo'>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                </p>
+                                                <p className='listSubname'>S, M, L, XL</p>
+                                            </div>
+                                            <div className='item_name'>
+                                                <div className='namename'>[r]F/W 조엘 자수 후드 맨투맨</div>
+                                            </div>
+                                            <div className='item_prive'>
+                                                <span className='price'>29,800</span>
+                                            </div>
+                                            <div className='item_productview'>
+                                                <div>조회수</div>
+                                            </div>
+                                            <div className='prd-ico'></div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li className='item-list slick-slide madeProudct'>
+                                    <dl className='thumb'>
+                                        <dt>
+                                            <div><img src='blank'></img> </div>
+                                        </dt>
+                                        <dd className='item_info'>
+                                            <div className='item_top'>
+                                                <p className='colorinfo'>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                    <div className='cloth-color' style={{background: "black"}}>
+                                                    </div>
+                                                </p>
+                                                <p className='listSubname'>S, M, L, XL</p>
+                                            </div>
+                                            <div className='item_name'>
+                                                <div className='namename'>[r]F/W 조엘 자수 후드 맨투맨</div>
+                                            </div>
+                                            <div className='item_prive'>
+                                                <span className='price'>29,800</span>
                                             </div>
                                             <div className='item_productview'>
                                                 <div>조회수</div>
@@ -94,7 +159,7 @@ export default function CoComponent() {
                     </div>
                 </div>
             </div>
-            <div className='section'>
+            <div className='section' id='TOP'>
                 <div className='wrapper'>
                     <div className='tt_box'>
                         <h3 className='tt txt_center'>
@@ -103,10 +168,8 @@ export default function CoComponent() {
                     </div>
                     <div className='contain'>
                         <div className='product_list_box'>
-                            <div className='item-column'>
-                                <div className='block_recmd_product'>
-                                    <div className='item-cont'>
-                                        <div className='item-list'>
+                                    <ul className='item-cont'>
+                                        <li className='item-list slick-slide madeProudct'>
                                             <dl className='thumb'>
                                                 <dt>
                                                     <div>이미지</div>
@@ -116,14 +179,14 @@ export default function CoComponent() {
                                                         <p className='colorinfo'>
                                                             <div className='cloth-color'></div>
                                                         </p>
-                                                        <p className='listSubname'></p>
+                                                        <p className='listSubname'>S, M, L, XL</p>
 
                                                     </div>
                                                     <div className='item_name'>
-                                                        <div>조엘 자수 후드 맨투맨</div>
+                                                        <div className='namename'>조엘 자수 후드 맨투맨</div>
                                                     </div>
                                                     <div className='item_prive'>
-                                                        <div className='price'>29,800</div>
+                                                        <div className='price'>"29,800"</div>
                                                     </div>
                                                     <div className='item_productview'>
                                                         <div>조회수</div>
@@ -131,11 +194,8 @@ export default function CoComponent() {
                                                     <div className='prd-ico'></div>
                                                 </dd>
                                             </dl>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </li>
+                                    </ul>
                         </div>
                     </div>
                 </div>
