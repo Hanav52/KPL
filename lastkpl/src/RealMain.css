@@ -243,6 +243,133 @@ button span {
     display: block;
     margin-bottom: 16px;
 }
+/* content 부분 css */
+.contentWrapper {
+    position: relative;
+    overflow: hidden;
+}
+#timeBest {
+    background: #eee;
+}
+.section {
+    padding: 75px 0;
+}
+.tt_box {
+    padding-top: 20px;
+}
+#timeBest .tt_box {
+    text-align: center;
+}
+.tt_box .tt em {
+    font-size: 43px;
+    display: block;
+}
+.fbold {
+    font-weight: bold !important;
+}
+address, em {
+    font-style: normal;
+}
+.swiper_tt {
+    margin-top: 16px;
+    font-size: 16px;
+    color: #999;
+}
+.contain {
+    margin-top: 40px;
+}
+#TOP {
+    padding-top: 200px;
+}
+.txt_center {
+    text-align: center !important;
+}
+.product_list_box .item-cont .item-list.slick-slide {
+    float: none;
+}
+.product_list_box .item-cont .item-list {
+    margin-right: 21px;
+    margin-bottom: 80px;
+    width: calc(25% - 16px);
+    display: inline-block;
+    vertical-align: top;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+.item-cont .item-list .thumb {
+    text-align: left;
+}
+.item-cont .item-list .thumb dt {
+    position: relative;
+}
+.item-cont .item-list .thumb dt div {
+    display: inline-block;
+    padding-bottom: 130%;
+    position: relative;
+    width: 100%;
+}
+.item-cont .item-list .thumb dd {
+    padding-top: 14px;
+    position: relative;
+}
+.item-cont .item-list .thumb dt div img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.item-cont .item-list .item_name {
+    margin-bottom: 5px;
+}
+.item-cont .item-list .item_name .namename {
+    display: inline-block;
+    color: #333;
+    font-size: 14px;
+    padding: 5px 0;
+}
+.item-cont .item-list .thumb .colorinfo {
+    display: inline-block;
+}
+.item-cont .item-list .thumb .colorinfo div {
+    display: inline-block;
+    margin-right: 2px;
+    width: 15px;
+    height: 6px;
+    border: 1px solid #d7d7d7;
+}
+.item-cont .item-list .thumb .listSubname {
+    margin: 6px 0;
+    color: #999;
+    word-break: break-all;
+}
+.item-cont .item-list .thumb .prd-preivew {
+    position: absolute;
+    top: 6px;
+    right: 0;
+}
+.item-cont .item-list .thumb .item_price {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+.item-cont .item-list .thumb .item_price .price {
+    font-size: 15px;
+    font-weight: bold;
+}
+.product_list_box .item-cont {
+    font-size: 0;
+}
+
+
+
+
+
+
+
+
 
 
 
