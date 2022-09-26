@@ -26,3 +26,7 @@ export const getRecent = async () => {
   return response;
 }
 // 카테고리별 페이지 API
+export const getEachCategory = async (categoryid) => {
+  const response = await instance.get(`/categoryrecent/0`)
+  return response;
+} 

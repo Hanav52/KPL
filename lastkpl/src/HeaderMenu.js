@@ -22,16 +22,8 @@ export default function Hcompo() {
            console.error(e);
         }
     }
-    const Category1 = async (e) => {
-        try {
-            const response = await getRecent();
-                console.log(response)
-        } catch (e) {
-           console.error(e);
-        }
-    }
     useEffect(()=> {
-        Category1();
+        Category();
     },[])
 
     return (

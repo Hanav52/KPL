@@ -13,4 +13,10 @@ module.exports = function(app){
             changeOrigin: true
         })
     )
+    app.use(
+        createProxyMiddleware('/category', {
+            target: 'http://35.89.73.172:3000/',
+            changeOrigin: true
+        })
+    )
 };
