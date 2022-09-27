@@ -23,7 +23,7 @@ export const getMainCategory = async () => {
 // 최신 게시글 API
 export const getRecent = async () => {
   const response = await instance.get(`/recent`)
-  return response;
+  return response.data;
 }
 // 카테고리별 페이지 API
 export const getEachCategory = async (categoryid) => {

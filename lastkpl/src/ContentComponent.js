@@ -50,17 +50,23 @@ function ImageSlide() {
 
 export default function CoComponent() {
 
-    const [data1, setData1] = useState([]);
-    const [data2, setData2] = useState([]);
+    const [cloth, setCloth] = useState([]);
+    const [color, setColor] = useState([]);
+    const [clothData2, setClothData2] = useState([]);
+    const [colorData2, setColorData2] = useState([]);
 
-    const Category = async (e) => {
+    const Category = async () => {
         try {
             const response = await getRecent();
-                console.log(response.data.data1[0].b_color)
-                setData1(response.data.data1)
-                for(const i = 0; i < data1.length; i++) {
-                    setData2(response.data.data1[i].b_color)
-                }
+                console.log(response.data2.length);
+                setCloth(response.data1);
+                for(let i = 0; i < response.data1.length; i++) {
+                    setColor(response.data1[i].b_color);
+                };
+                setClothData2(response.data2);
+                for(let a = 0; a < response.data2.length; a++) {
+                    setColorData2(response.data2[a].b_color);
+                };
         } catch (e) {
            console.error(e);
         }
@@ -68,13 +74,6 @@ export default function CoComponent() {
     useEffect(()=> {
         Category();
     },[])
-
-    // const result1 = data1.filter((name) => name === 0);
-    // const namelist = result1.map((rd) => (
-    //     <div className='cloth-color' style={{background: `${rd.b_color}`}}>
-    //     </div>
-    // ));
-
 
 
     return (
@@ -93,7 +92,7 @@ export default function CoComponent() {
                     <div className='contain'>
                         <div className='product_list_box'>
                             <ul className='item-cont'>
-                            {data1.map(({b_name, b_price, b_views, b_url, id}) => (
+                            {cloth.map(({b_name, b_price, b_views, b_url, id}) => (
                                 <li className='item-list slick-slide madeProudct' key={id}>
                                     <dl className='thumb'>
                                         <dt>
@@ -102,9 +101,8 @@ export default function CoComponent() {
                                         <dd className='item_info'>
                                             <div className='item_top'>
                                                 <p className='colorinfo'>
-                                                    {data2.map(({b_color}) => (
+                                                    {color.map(({b_color}) => (
                                                     <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
-                                                    {b_color}
                                                     </div>
                                                     ))}
                                                 </p>
@@ -130,7 +128,6 @@ export default function CoComponent() {
 
                 </div>
             </div>
-            
             <div className='section' id='TOP'>
                 <div className='wrapper'>
                     <div className='tt_box'>
@@ -141,37 +138,232 @@ export default function CoComponent() {
                     <div className='contain'>
                         <div className='product_list_box'>
                                     <ul className='item-cont'>
+                                    {clothData2.filter((number) => number.c_num === 1).map(({b_name, b_price, b_views, b_url, id}) => (
                                         <li className='item-list slick-slide madeProudct'>
                                             <dl className='thumb'>
                                                 <dt>
-                                                    <div>이미지</div>
+                                                    <div><img src={b_url} alt="이미지"></img></div>
                                                 </dt>
                                                 <dd className='item_info'>
                                                     <div className='item_top'>
                                                         <p className='colorinfo'>
-                                                            <div className='cloth-color'></div>
+                                                        {colorData2.map(({b_color}) => (
+                                                            <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
+                                                            {b_color}
+                                                            </div>
+                                                        ))}
                                                         </p>
                                                         <p className='listSubname'>S, M, L, XL</p>
 
                                                     </div>
                                                     <div className='item_name'>
-                                                        <div className='namename'>조엘 자수 후드 맨투맨</div>
+                                                        <div className='namename'>{b_name}</div>
                                                     </div>
                                                     <div className='item_prive'>
-                                                        <div className='price'>"29,800"</div>
+                                                        <div className='price'>{b_price}</div>
                                                     </div>
                                                     <div className='item_productview'>
-                                                        <div>조회수</div>
+                                                        <div>{b_views}</div>
                                                     </div>
                                                     <div className='prd-ico'></div>
                                                 </dd>
                                             </dl>
                                         </li>
+                                        ))}
                                     </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <div className='section' id='TOP'>
+                <div className='wrapper'>
+                    <div className='tt_box'>
+                        <h3 className='tt txt_center'>
+                            <em className='fbold'>PANTS</em>
+                        </h3>
+                    </div>
+                    <div className='contain'>
+                        <div className='product_list_box'>
+                                    <ul className='item-cont'>
+                                    {clothData2.filter((number) => number.c_num === 2).map(({b_name, b_price, b_views, b_url, id}) => (
+                                        <li className='item-list slick-slide madeProudct'>
+                                            <dl className='thumb'>
+                                                <dt>
+                                                    <div><img src={b_url} alt="이미지"></img></div>
+                                                </dt>
+                                                <dd className='item_info'>
+                                                    <div className='item_top'>
+                                                        <p className='colorinfo'>
+                                                        {colorData2.map(({b_color}) => (
+                                                            <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
+                                                            {b_color}
+                                                            </div>
+                                                        ))}
+                                                        </p>
+                                                        <p className='listSubname'>S, M, L, XL</p>
+
+                                                    </div>
+                                                    <div className='item_name'>
+                                                        <div className='namename'>{b_name}</div>
+                                                    </div>
+                                                    <div className='item_prive'>
+                                                        <div className='price'>{b_price}</div>
+                                                    </div>
+                                                    <div className='item_productview'>
+                                                        <div>{b_views}</div>
+                                                    </div>
+                                                    <div className='prd-ico'></div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        ))}
+                                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='section' id='TOP'>
+                <div className='wrapper'>
+                    <div className='tt_box'>
+                        <h3 className='tt txt_center'>
+                            <em className='fbold'>OUTER</em>
+                        </h3>
+                    </div>
+                    <div className='contain'>
+                        <div className='product_list_box'>
+                                    <ul className='item-cont'>
+                                    {clothData2.filter((number) => number.c_num === 3).map(({b_name, b_price, b_views, b_url, id}) => (
+                                        <li className='item-list slick-slide madeProudct'>
+                                            <dl className='thumb'>
+                                                <dt>
+                                                    <div><img src={b_url} alt="이미지"></img></div>
+                                                </dt>
+                                                <dd className='item_info'>
+                                                    <div className='item_top'>
+                                                        <p className='colorinfo'>
+                                                        {colorData2.map(({b_color}) => (
+                                                            <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
+                                                            {b_color}
+                                                            </div>
+                                                        ))}
+                                                        </p>
+                                                        <p className='listSubname'>S, M, L, XL</p>
+
+                                                    </div>
+                                                    <div className='item_name'>
+                                                        <div className='namename'>{b_name}</div>
+                                                    </div>
+                                                    <div className='item_prive'>
+                                                        <div className='price'>{b_price}</div>
+                                                    </div>
+                                                    <div className='item_productview'>
+                                                        <div>{b_views}</div>
+                                                    </div>
+                                                    <div className='prd-ico'></div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        ))}
+                                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='section' id='TOP'>
+                <div className='wrapper'>
+                    <div className='tt_box'>
+                        <h3 className='tt txt_center'>
+                            <em className='fbold'>SKIRT</em>
+                        </h3>
+                    </div>
+                    <div className='contain'>
+                        <div className='product_list_box'>
+                                    <ul className='item-cont'>
+                                    {clothData2.filter((number) => number.c_num === 4).map(({b_name, b_price, b_views, b_url, id}) => (
+                                        <li className='item-list slick-slide madeProudct'>
+                                            <dl className='thumb'>
+                                                <dt>
+                                                    <div><img src={b_url} alt="이미지"></img></div>
+                                                </dt>
+                                                <dd className='item_info'>
+                                                    <div className='item_top'>
+                                                        <p className='colorinfo'>
+                                                        {colorData2.map(({b_color}) => (
+                                                            <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
+                                                            {b_color}
+                                                            </div>
+                                                        ))}
+                                                        </p>
+                                                        <p className='listSubname'>S, M, L, XL</p>
+
+                                                    </div>
+                                                    <div className='item_name'>
+                                                        <div className='namename'>{b_name}</div>
+                                                    </div>
+                                                    <div className='item_prive'>
+                                                        <div className='price'>{b_price}</div>
+                                                    </div>
+                                                    <div className='item_productview'>
+                                                        <div>{b_views}</div>
+                                                    </div>
+                                                    <div className='prd-ico'></div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        ))}
+                                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className='section' id='TOP'>
+                <div className='wrapper'>
+                    <div className='tt_box'>
+                        <h3 className='tt txt_center'>
+                            <em className='fbold'>SHOES&BAGS</em>
+                        </h3>
+                    </div>
+                    <div className='contain'>
+                        <div className='product_list_box'>
+                                    <ul className='item-cont'>
+                                    {clothData2.filter((number) => number.c_num === 5).map(({b_name, b_price, b_views, b_url, id}) => (
+                                        <li className='item-list slick-slide madeProudct'>
+                                            <dl className='thumb'>
+                                                <dt>
+                                                    <div><img src={b_url} alt="이미지"></img></div>
+                                                </dt>
+                                                <dd className='item_info'>
+                                                    <div className='item_top'>
+                                                        <p className='colorinfo'>
+                                                        {colorData2.map(({b_color}) => (
+                                                            <div className='cloth-color' style={{backgroundColor: `${b_color}`}}>
+                                                            {b_color}
+                                                            </div>
+                                                        ))}
+                                                        </p>
+                                                        <p className='listSubname'>S, M, L, XL</p>
+
+                                                    </div>
+                                                    <div className='item_name'>
+                                                        <div className='namename'>{b_name}</div>
+                                                    </div>
+                                                    <div className='item_prive'>
+                                                        <div className='price'>{b_price}</div>
+                                                    </div>
+                                                    <div className='item_productview'>
+                                                        <div>{b_views}</div>
+                                                    </div>
+                                                    <div className='prd-ico'></div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        ))}
+                                    </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     )
 }
