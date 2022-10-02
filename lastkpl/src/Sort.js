@@ -1,21 +1,22 @@
 import { ButtonGroup, createTheme, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
 
-export default function Sort() {
+export default function SSort() {
 
-    const [theme, setDesc] = useState();
-
+  const sort = useSelector(sort=>sort.sort)
+  const dispatch = useDispatch();
     return(
         <div className='inner'>
           <div className='bodybodyheader'>
-          {/* <ThemeProvider theme={theme}> */}
             <ButtonGroup variant="text" aria-label="text button group">
-              <Button onClick={() => setDesc("writeDate,desc")} color="three" style={{fontFamily: 'CookieRun-Regular', fontWeight: 'normal', fontStyle: 'normal'}}>최신순</Button>
-              <Button onClick={() => setDesc("views,desc")} color="three" style={{fontFamily: 'CookieRun-Regular', fontWeight: 'normal', fontStyle: 'normal'}}>조회순</Button>
-              <Button onClick={() => setDesc("replyCount,desc")} color="three" style={{fontFamily: 'CookieRun-Regular', fontWeight: 'normal', fontStyle: 'normal'}}>댓글순</Button>
+              <Button onClick={() => dispatch({ type: '낮은 가격순'})} >낮은 가격순</Button>
+              <Button>조회순</Button>
+              {/* <Button onClick={() => Sort("b_price,desc")} >높은 가격순</Button>
+              <Button onClick={() => Sort("b_time,desc")} >최신순</Button>
+              <Button onClick={() => Sort("b_views,desc")} >조회순</Button> */}
             </ButtonGroup>
-          {/* </ThemeProvider> */}
           </div>  
         </div>
     )

@@ -1,33 +1,39 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
+import { getEachCategory } from "./API";
 import Search from "./Search";
-import Sort from "./Sort";
+import SSort from "./Sort";
 
-function Cloth({res, rescolor}) {
+function Cloth({res, rescolor, Page, Sort}) {
 
-    // const scrollEvent = () => {
-    //     const scrollHeight = document.documentElement.scrollHeight;
-    //     const scrollTop = document.documentElement.scrollTop;
-    //     const clientHeight = document.documentElement.clientHeight;
-    //     console.log(scrollTop);
-    //     if (scrollTop + clientHeight >= scrollHeight - 950) {
-    //       setPage(page + 1);
-    //     }
-    //   };
+  let timeInterver = '';
+  
+    const scrollEvent = ()=>{
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+      console.log(scrollTop)
+      if (scrollTop + clientHeight >= scrollHeight - 950) {
+        //setPage(page + 1);
+        Page();
+      }
+    }
     
-    //   const handleScroll = () => {
-    //     clearTimeout(timeInterver);
-    //     timeInterver = setTimeout(scrollEvent, 300);
-    //   };
+    const handleScroll = () => {
+      clearTimeout(timeInterver);
+      timeInterver = setTimeout(scrollEvent, 300)
+    };
+  
     
-    //   useEffect(() => {
-    //     window.addEventListener("scroll", handleScroll);
-    
-    //     return () => {
-    //       window.removeEventListener("scroll", handleScroll);
-    //     };
-    //   });
-    
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    });
+
   return (
     <>
       <div className="section" id="TOP">
@@ -36,7 +42,7 @@ function Cloth({res, rescolor}) {
             <h3 className="tt txt_center">
               <em className="fbold">TOP</em>
             </h3>
-            <Sort/>
+            <SSort/>
             <Search/>
           </div>
           <div className="contain">
@@ -47,7 +53,7 @@ function Cloth({res, rescolor}) {
                   <dl className="thumb">
                     <dt>
                       <div>
-                        <img src={b_url} alt="이미지"></img>
+                        <img src={`http://35.89.73.172:3000/${b_url}`} alt="이미지"></img>
                       </div>
                     </dt>
                     <dd className="item_info">
