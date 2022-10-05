@@ -1,19 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CoComponent from './ContentComponent';
-import HeaderMenu from './Header';
-import SignIn from './Login';
-import App from './Redux/Props';
-import RegisterCopo from './Register';
-import Register from './Register';
-import RegisterTest from './RegisterTest';
-import Join from './RegisterTest';
+import Body from './메인/Body';
+import HeaderMenu from './헤더/Header';
+import SignIn from './로그인&회원가입/Login';
 import reportWebVitals from './reportWebVitals';
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CoComponent/>
+    <Body/>
   </React.StrictMode>
 );
 

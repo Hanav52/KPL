@@ -58,7 +58,6 @@ export default function CoComponent() {
     const Category = async () => {
         try {
             const response = await getRecent();
-                console.log(response.data2.length);
                 setCloth(response.data1);
                 for(let i = 0; i < response.data1.length; i++) {
                     setColor(response.data1[i].b_color);
