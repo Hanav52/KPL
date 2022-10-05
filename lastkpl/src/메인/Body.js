@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Provider, useDispatch, useSelector } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore } from "redux";
 import Footer from "../Footer/Footer";
 import SubCategory from "../카테고리 별 글 목록/SubCategory";
@@ -41,10 +41,17 @@ export default function Body() {
         <>
         <BrowserRouter>
             <Provider store={store}>
-                <Hcompo/>
-                {/* <CoComponent/> */}
-                <SubCategory/>
-                <Footer/>
+              <Switch>
+                <Route exact path='/'>
+                  <Hcompo/>
+                  <CoComponent/>
+                </Route>
+                <Route exact path='/cate'>
+                  <Hcompo/>
+                  <SubCategory/>
+                </Route>
+              </Switch>
+            <Footer/>
             </Provider>
         </BrowserRouter>
         </>
