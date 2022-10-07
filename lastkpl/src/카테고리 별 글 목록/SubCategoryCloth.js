@@ -1,4 +1,4 @@
-import Pagination from "../Pagination";
+import Pagination from "./Pagination";
 import Search from "./Search";
 import Sort from "./Sort";
 
