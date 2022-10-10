@@ -146,7 +146,7 @@ export default function TOP () {
                                         </table>
                                     </div>
                                     <div className="prd-btns">
-                                        <button className="btn_buy">BUT IT NOW</button>
+                                        <button className="btn_buy">BUT IT NOW{/*다 수정해야함*/}</button>
                                         <button className="btn_cart">ADD TO CART</button>
                                     </div>
                                 </div>
