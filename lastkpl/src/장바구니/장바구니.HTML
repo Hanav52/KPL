@@ -1,0 +1,367 @@
+<div id="contentWrapper">
+    <div id="contentWrap">
+
+        <link type="text/css" rel="stylesheet" href="/template_common/shop/basic_simple/menu.1.css?t=201711221039">
+        <div id="content" class="wrapper">
+            <h2 class="tit-mypage">장바구니</h2>
+            <ul class="order_step">
+                <li class="active">01 장바구니</li>
+                <li class="">02 주문서 작성</li>
+                <li class="">03 주문 완료</li>
+            </ul>
+            <div id="cartWrap">
+
+
+
+                <div class="table-cart table-fill-prd cart_box">
+                    <table summary="번호, 사진, 제품명, 수량, 적립, 가격, 배송비, 취소">
+                        <caption>장바구니 담긴 상품</caption>
+                        <colgroup>
+                            <col width="65">
+                            <col width="130">
+                            <col width="*">
+                            <col width="100">
+                            <col width="185">
+                            <col width="140">
+                            <col width="120">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <div class="tb-center"> <input type="checkbox" name="__allcheck"
+                                            onclick="all_basket_check(this, 1);" class="MS_input_checkbox"
+                                            checked="checked"></div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center"></div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center">상품명</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center">수량</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center">적립금</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center">판매가</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="tb-center">선택</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <script>
+                                var widerItems = [];
+                                var widerItemCount = 0;
+                            </script>
+                            <!-- 20210914 제로원 GA등 장바구니loop Start -->
+                            <form action="basket.html" method="post" name="forms" id="basket_form0"
+                                onsubmit="return false;"></form>
+                            <input type="hidden" name="brandcode" value="034003000114">
+                            <input type="hidden" name="branduid" value="87249">
+                            <input type="hidden" name="type">
+                            <input type="hidden" name="action_type">
+                            <input type="hidden" name="orgamount" value="1">
+                            <input type="hidden" name="cart_id" value="1">
+                            <input type="hidden" name="cart_type" value="NORMAL">
+                            <input type="hidden" name="min_add_amount" value="1">
+                            <input type="hidden" name="maxq" value="">
+                            <input type="hidden" name="basket_page_type" value="">
+                            <input type="hidden" name="is_submit" value="N">
+                            <input type="hidden" name="direct_basket_item"
+                                value="{&quot;uid&quot;:&quot;87249&quot;,&quot;cart_id&quot;:&quot;1&quot;,&quot;cart_type&quot;:&quot;NORMAL&quot;,&quot;pack_uid&quot;:&quot;&quot;,&quot;use_tax&quot;:&quot;N&quot;,&quot;basket_idx&quot;:0}">
+                            <input type="hidden" name="direct_extra_item"
+                                value="{&quot;extra_require_uid&quot;:null,&quot;extra_require&quot;:null,&quot;extra_main_brandname&quot;:&quot;&quot;}">
+                            <input type="hidden" name="pack_uid" value="" form_idx="0">
+                            <!---- support@snapvi.co.kr 메이크샵만 장바구니 PC, M 추가 스크립트 --->
+                            <input type="hidden" name="snap_push_basket_option" value="COLOR : 블랙, SIZE : M(28~29) 1개">
+                            <!---- snappush  end -->
+                            <tr class="nbg">
+                                <td>
+                                    <div class="tb-center">
+                                        <input type="hidden" name="original_price_sell" value="34800">
+                                        <input type="hidden" name="price_sell" value="34800">
+                                        <input type="checkbox" name="basketchks" id="basketchks"
+                                            chk_data_uid="pr_NORMAL_87249_1" pack_uid="" checked="checked"
+                                            class="MS_input_checkbox pr_NORMAL_87249"
+                                            onclick="cal_basket_chk(this, '');">
+                                        <input type="hidden" name="basket_item"
+                                            value="{&quot;uid&quot;:&quot;87249&quot;,&quot;cart_id&quot;:&quot;1&quot;,&quot;cart_type&quot;:&quot;NORMAL&quot;,&quot;pack_uid&quot;:&quot;&quot;,&quot;use_tax&quot;:&quot;N&quot;,&quot;basket_idx&quot;:0}">
+                                        <input type="hidden" name="extra_item"
+                                            value="{&quot;extra_require_uid&quot;:null,&quot;extra_require&quot;:null,&quot;extra_main_brandname&quot;:&quot;&quot;}">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tb-center">
+                                        <div class="thumb">
+                                            <a
+                                                href="/shop/shopdetail.html?branduid=87249&amp;xcode=034&amp;mcode=&amp;scode=&amp;GfDT=aW13UQ%3D%3D"><img
+                                                    src="/shopimages/ranson01/0340030001143.gif?1661821987" alt="상품 섬네일"
+                                                    title="상품 섬네일"></a>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tb-left">
+                                        <a href="/shop/shopdetail.html?branduid=87249&amp;xcode=034&amp;mcode=&amp;scode=&amp;GfDT=aW13UQ%3D%3D"
+                                            class="tb-bold">[R]F/W 재키 핀턱 와이드 슬랙스</a>
+                                        <div class="tb-opt">
+                                            <span class="tb-dl"><span class="opt_dd">COLOR : 블랙, SIZE : M(28~29) <span
+                                                        class="MK_option_amount87249_1">1</span>개</span></span>
+                                        </div>
+                                        <div class="opt-spin">
+                                            <a href="javascript:modify_option('87249', '1','');"
+                                                class="CSSbuttonWhite btn_option_btn">옵션변경</a>
+
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="opt-spin">
+                                        <input type="text" name="amount" value="1" class="txt-spin"> <span class="btns">
+                                            <a class="btn-up" href="javascript:count_change(0, 0)">+</a>
+                                            <a class="btn-dw" href="javascript:count_change(1, 0)">-</a>
+                                        </span>
+                                        <a href="javascript:send_basket(0, 'upd')"
+                                            class="CSSbuttonWhite btn_option">변경</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tb-center"><span class="MK_reserve87249_1">340</span></div>
+                                </td>
+                                <td>
+                                    <div class="tb-center tb-bold tb-price">
+                                        <span>34,800원</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="tb-center">
+                                        <span class="d-block" style="display:none"><a
+                                                href="javascript:basket_wish_login();"
+                                                class="CSSbuttonWhite btn_select">찜상품</a></span>
+                                        <span class="d-block"><a href="javascript:send_basket(0, 'del')"
+                                                class="CSSbuttonWhite btn_select">삭제하기</a></span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <script>
+                                widerItems.push({
+                                    "id": document.querySelectorAll("input[name='branduid']")[widerItemCount].value,
+                                    "price": parseInt("34,800".replace(",", "")),
+                                    "quantity": document.querySelectorAll(".txt-spin[name='amount']")[widerItemCount].value,
+                                    "title": "[R]F/W 재키 핀턱 와이드 슬랙스"
+                                });
+                                widerItemCount++;
+                            </script>
+                        </tbody>
+                    </table>
+                </div><!-- .table-fill-prd -->
+                <div class="btn-order-ctrl">
+                    <div class="left">
+                        <a href="/html/mainm.html" class="CSSbuttonWhite">쇼핑계속하기</a>
+
+                    </div>
+                    <div class="right">
+                        <a href="javascript:basket_multidel(1)" class="CSSbuttonWhite">선택 상품 삭제</a>
+                        <a href="javascript:basket_clear();" class="CSSbuttonWhite">장바구니 비우기</a>
+                    </div>
+                </div>
+
+
+                <div class="cart-ft2">
+
+                    <script type="text/javascript" src="https://pay.naver.com/customer/js/naverPayButton.js"
+                        charset="UTF-8"></script>
+                    <script type="text/javascript"
+                        src="https://pay.naver.com/customer/js/innerNaverPayButton.js?site_preference=normal&amp;462638"
+                        charset="UTF-8"></script>
+                    <link id="NAVER_PAY_STYLE" type="text/css" rel="stylesheet"
+                        href="https://img.pay.naver.net/static/css/button/button2.css?462638">
+                    <script language="javascript">
+                        function nhn_buy_nc_baro() {
+                            var nhnForm = document.form1;
+                            //var nhnForm  = document.getElementById("form1");
+                            if (navigator.appName == 'Microsoft Internet Explorer') {
+                                var ie9_chk = navigator.appVersion.indexOf("MSIE 9") > -1 ? true : false;
+                                var ie10_chk = navigator.appVersion.indexOf("MSIE 10") > -1 ? true : false;
+
+                                if (ie10_chk == true) {
+                                    ie9_chk = true;
+                                }
+                            }
+                            if (ie9_chk || navigator.appName != 'Microsoft Internet Explorer') {
+                                var aElement = document.createElement("input");
+                                aElement.setAttribute('type', 'hidden');
+                                aElement.setAttribute('name', 'navercheckout');
+                                aElement.setAttribute('value', '1');
+
+                                if (typeof (inflowParam) != 'undefined') {
+                                    var aElement2 = document.createElement("input");
+                                    aElement2.setAttribute('type', 'hidden');
+                                    aElement2.setAttribute('name', 'nhn_ncisy');
+                                    aElement2.setAttribute('value', inflowParam);
+                                }
+                            } else {
+                                try {
+                                    var aElement = document.createElement("<input type='hidden' name='navercheckout' value='1'>");
+
+                                    if (typeof (inflowParam) != 'undefined') {
+                                        var aElement2 = document.createElement("<input type='hidden' name='nhn_ncisy' value='" + inflowParam + "'>");
+                                    }
+                                } catch (e) {
+                                    var aElement = document.createElement("input");
+                                    aElement.setAttribute('type', 'hidden');
+                                    aElement.setAttribute('name', 'navercheckout');
+                                    aElement.setAttribute('value', '1');
+
+                                    if (typeof (inflowParam) != 'undefined') {
+                                        var aElement2 = document.createElement("input");
+                                        aElement2.setAttribute('type', 'hidden');
+                                        aElement2.setAttribute('name', 'nhn_ncisy');
+                                        aElement2.setAttribute('value', inflowParam);
+                                    }
+
+                                    ie9_chk = true;
+                                }
+                            }
+
+                            nhnForm.appendChild(aElement);
+
+                            if (typeof (inflowParam) != 'undefined') {
+                                nhnForm.appendChild(aElement2);
+                            }
+                            nhnForm.target = "loginiframe";
+                            nhnForm.ordertype.value = "baro|parent.";
+
+                            send('baro', '');
+                            if (ie9_chk || navigator.appName != 'Microsoft Internet Explorer') {
+                                aElement.setAttribute('value', '');
+                            } else {
+                                nhnForm.navercheckout.value = "";
+                            }
+
+                            nhnForm.target = "";
+                            nhnForm.ordertype.value = "";
+                            if (!ie9_chk) {
+                                for (var i = 0; i < nhnForm.navercheckout.length; i++) {
+                                    nhnForm.navercheckout[i].value = "";
+                                }
+                            }
+                        }
+                        function nhn_buy_nc_order() {
+                            multi_order('naver'); return;
+                            var type = "N";
+                            if (type == "N") {
+                                window.open("order.html?navercheckout=2", "");
+                            } else {
+                                location.href = "order.html?navercheckout=2";
+                            }
+                            return false;
+                        }
+                        function nhn_wishlist_nc(url) {
+                            window.open(url, "", "scrollbars=yes,width=400,height=267");
+                            return false;
+                        }
+                    </script>
+                    <div id="nhn_btn" style="zoom: 1;">
+                        <script type="text/javascript">//<![CDATA[
+                            naver.NaverPayButton.apply({
+                                BUTTON_KEY: "4E46CDE3-9440-4A7C-AA95-824261EF3107", // 체크아웃에서 제공받은 버튼 인증 키 입력
+                                TYPE: "C", // 버튼 모음 종류 설정
+                                COLOR: 1, // 버튼 모음의 색 설정
+                                COUNT: 1, // 버튼 개수 설정. 구매하기 버튼만 있으면(장바구니 페이지) 1, 찜하기 버튼도 있으면(상품 상세 페이지) 2를 입력.
+                                ENABLE: "Y", // 품절 등의 이유로 버튼 모음을 비활성화할 때에는 "N" 입력
+                                BUY_BUTTON_HANDLER: nhn_buy_nc_order, // 구매하기 버튼 이벤트 Handler 함수 등록. 품절인 경우 not_buy_nc 함수 사용
+                                BUY_BUTTON_LINK_URL: "", // 링크 주소 (필요한 경우만 사용)
+                                WISHLIST_BUTTON_HANDLER: nhn_wishlist_nc, // 찜하기 버튼 이벤트 Handler 함수 등록
+                                WISHLIST_BUTTON_LINK_URL: "navercheckout.action.html?action_type=wish&branduid=", // 찜하기 팝업 링크 주소
+                                EMBED_ID: "nhn_btn",
+                                "": ""
+                            });
+//]]></script>
+                        <div id="NC_ID_1665497871911463" class="npay_storebtn_bx npay_type_C_1_1">
+                            <div id="NPAY_BUTTON_BOX_ID" class="npay_button_box ">
+                                <div class="npay_button">
+                                    <div class="npay_text"><span class="npay_blind">NAVER 네이버 ID로 간편구매 네이버페이</span>
+                                    </div>
+                                    <table class="npay_btn_list" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr>
+                                                <td class="npay_btn_item"> <a
+                                                        id="NPAY_BUY_LINK_IDNC_ID_1665497871911463" href="#"
+                                                        class="npay_btn_link npay_btn_pay "
+                                                        style="box-sizing:content-box; " title="새창"><span
+                                                            class="npay_blind">네이버페이 구매하기</span></a> </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="NPAY_EVENT_ID" class="npay_event"> <a
+                                        id="NPAY_PROMOTION_PREV_IDNC_ID_1665497871911463" href="#"
+                                        class="npay_more npay_more_prev"><span class="npay_blind">이전</span></a>
+                                    <p id="NPAY_PROMOTION_IDNC_ID_1665497871911463" class="npay_event_text"><strong
+                                            class="event_title">CU더블혜택</strong><a class="event_link"
+                                            href="https://m-campaign.naver.com/collect/v2/?code=2021120101_210201_008_inc_103101_20211201001_shopping_pay&amp;target=https://m-campaign.naver.com/npay/cuplus_npay/"
+                                            target="_blank" title="새창">최대 5%적립+최대5%할인</a></p> <a
+                                        id="NPAY_PROMOTION_NEXT_IDNC_ID_1665497871911463" href="#"
+                                        class="npay_more npay_more_next"><span class="npay_blind">다음</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- #cartWrap -->
+
+            <div id="cartInfo" class="headroom headroom--top headroom--not-bottom">
+
+
+                <div class="tb-right tb-total" id="totalPriceArea">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    총 상품금액
+                                </th>
+                                <td class="total_price_sell">34,800</td>
+                            </tr>
+
+                            <tr id="total_delivery_wrap">
+                                <th>
+                                    총 배송비
+                                </th>
+                                <td class="total_delivery">2,500</td>
+                            </tr>
+
+                            <tr id="total_delivery_add_wrap" style="display: none;">
+                                <th>
+                                    추개 배송료
+                                </th>
+                                <td class="total_delivery_add">0</td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                    <table class="foot">
+                        <tfoot>
+                            <tr>
+                                <th>결제예정금액</th>
+                                <td class="total_price">37,300</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="delivery">
+                        50,000원 미만의 주문은 배송료를 청구합니다. </div>
+
+                </div>
+                <a href="javascript:multi_all_order();" class="CSSbuttonBlack btn">전체상품주문</a>
+                <a href="javascript:multi_order()" class="CSSbuttonWhite btn">선택상품주문</a>
+
+            </div>
+        </div><!-- #content -->
+    </div><!-- #contentWrap -->
+</div>
