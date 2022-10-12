@@ -24,7 +24,6 @@ export default function BasketBody() {
               <tr>
                 <th scope="col">
                   <div className="tb-center">
-                    {" "}
                     <input
                       type="checkbox"
                       name="__allcheck"
@@ -174,11 +173,6 @@ export default function BasketBody() {
                 <th>총 배송비</th>
                 <td className="total_delivery">2,500</td>
               </tr>
-
-              <tr id="total_delivery_add_wrap">
-                <th>추개 배송료</th>
-                <td className="total_delivery_add">0</td>
-              </tr>
             </tbody>
           </table>
 
@@ -191,7 +185,7 @@ export default function BasketBody() {
             </tfoot>
           </table>
           <div className="delivery">
-            50,000원 미만의 주문은 배송료를 청구합니다.{" "}
+            50,000원 미만의 주문은 배송료를 청구합니다.
           </div>
         </div>
         <a href="s:multi_all_order();" className="CSSbuttonBlack btn">

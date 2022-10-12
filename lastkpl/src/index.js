@@ -5,6 +5,7 @@ import HeaderMenu from './헤더/Header';
 import SignIn from './로그인&회원가입/Login';
 import reportWebVitals from './reportWebVitals';
 import DetailPage from './상세페이지/상세페이지';
+import Bascket from './장바구니/장바구니';
 
 
 
@@ -12,7 +13,7 @@ import DetailPage from './상세페이지/상세페이지';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <DetailPage/>
+    <Bascket/>
   </React.StrictMode>
 );
 
