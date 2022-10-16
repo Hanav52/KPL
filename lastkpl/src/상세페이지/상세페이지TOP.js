@@ -70,6 +70,7 @@ export default function TOP () {
                                                                         onChange={handleChange}
                                                                         autoWidth
                                                                         label="Age"
+                                                                        className="basic_option"
                                                                         >
                                                                         <MenuItem value="">
                                                                             <em>None</em>
@@ -118,7 +119,7 @@ export default function TOP () {
                                                             <div className="MK_innerQptWrap">
                                                                 <div id="MK_innerOptScroll" className="line" style={{paddingTop: "0"}}>
                                                                     <ul id="MKinnerOpt_02" className="MK_inner-opt-cm">
-
+                                                                        map함수로 가져와야함
                                                                     </ul>
                                                                     <ul id="MKinnerOpt_01" className="MK_inner-opt-cm">
                                                                         <li id="basic_0">
