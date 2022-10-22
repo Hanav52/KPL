@@ -13,7 +13,7 @@ import Bascket from './장바구니/장바구니';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Bascket/>
+    <DetailPage/>
   </React.StrictMode>
 );
 
