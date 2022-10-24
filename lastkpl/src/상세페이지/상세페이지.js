@@ -10,9 +10,9 @@ export default function DetailPage () {
 // api 호출
   const ClothAPI = async () => {
     try {
-      const response = await getClothAPI(localStorage.getItem("b_num"));
-      console.log(response);
-      setRes(response)
+      const response = await getClothAPI(1);
+      console.log(response.data.data1);
+      setRes(response.data.data1)
     } catch (e) {
       console.error(e);
     }
@@ -22,7 +22,7 @@ export default function DetailPage () {
     ClothAPI();
   }, [])
 
-  const [res, setRes] = useState();
+  const [res, setRes] = useState([]);
 
     return (
         <BrowserRouter>
@@ -30,7 +30,7 @@ export default function DetailPage () {
                 <div className="contentWrap">
                     <div className="content">
                         <div className="shop_detail" id="productDetail">
-                            <TOP/>
+                            <TOP res={res}/>
                             <MID/>
                             <BOT/>
                         </div>

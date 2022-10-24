@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import { useState } from "react";
 
 
-export default function TOP () {
+export default function TOP ({res}) {
 
     const [age, setAge] = useState("");
 
@@ -17,6 +17,8 @@ export default function TOP () {
     return (
         <div className="proudct_info_box">
             <div className="wrapper clearfix">
+            {res.map(({b_name, b_num, b_price, b_time, b_url, b_views}) => (
+                <>
                 <div className="product_img_box">
                     <div className="thumb clearfix">
                         <div  className="gallery-top gallery-container">
@@ -34,7 +36,7 @@ export default function TOP () {
                                 <div className="prdInfoCnt info">
                                     <div className="infoHeader">
                                         <h3 className="tit-prd">
-                                            선데이 루즈핏 핸드메이드 자켓
+                                            {b_name}
                                         </h3>
                                     </div>
                                     <p className="listSubname">
@@ -45,7 +47,7 @@ export default function TOP () {
                                             PRICE
                                         </span>
                                         <span className="price_sell">
-                                            139000
+                                            {b_price}
                                         </span>
                                     </p>
                                     <div className="table-opt prdOption">
@@ -155,6 +157,9 @@ export default function TOP () {
                         </div>
                     </div>
                 </div>
+                </>
+            ))}
+                
             </div>
         </div>
     )
