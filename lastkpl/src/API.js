@@ -36,7 +36,7 @@ export const getEachSearchCategory = async (categoryid, search, page, size, sort
   return response;
 }
 // 상세페이지 호출 API
-export const getClothAPI = async () => {
-  const response = await instance.get(`/detail/detailpage/{pagenum}`)
+export const getClothAPI = async (b_num) => {
+  const response = await instance.get(`/detail/detailpage/${b_num}`)
   return response;
 }
