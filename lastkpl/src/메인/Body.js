@@ -3,6 +3,7 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore } from "redux";
 import Footer from "../Footer/Footer";
+import DetailPage from "../상세페이지/상세페이지";
 import SubCategory from "../카테고리 별 글 목록/SubCategory";
 import HeaderMenu from "../헤더/Header";
 import Hcompo from "../헤더/HeaderMenu";
@@ -46,9 +47,13 @@ export default function Body() {
                   <Hcompo/>
                   <CoComponent/>
                 </Route>
-                <Route exact path='/cate'>
+                <Route path='/cate'>
                   <Hcompo/>
                   <SubCategory/>
+                </Route>
+                <Route path='/detail'>
+                  <Hcompo/>
+                  <DetailPage/>
                 </Route>
               </Switch>
             <Footer/>
