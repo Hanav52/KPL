@@ -18,8 +18,9 @@ function Cloth({res, rescolor, page, setPage, total, onClick, onChange}) {
           <div className="contain">
             <div className="product_list_box">
               <ul className="item-cont">
-                {res.map(({b_name, b_price, b_url, b_views}) => (
+                {res.map(({b_name, b_price, b_url, b_views, b_num}) => (
                     <li className="item-list slick-slide madeProudct">
+                  {localStorage.setItem("b_num", b_num)}
                   <dl className="thumb">
                     <dt>
                       <div>

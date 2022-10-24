@@ -15,6 +15,7 @@ function TimeBest({res1, rescolor1}) {
               <ul className="item-cont">
                 {res1.map(({b_name, b_price, b_url, b_views, b_num}) => (
                   <Link to="/detail">
+                    {localStorage.setItem("b_num", b_num)}
                     <li className="item-list slick-slide madeProudct">
                   <dl className="thumb">
                     <dt>
