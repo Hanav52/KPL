@@ -6,20 +6,16 @@ function solution(arr) {
     var top = answer[answer.length - 1];
     if (top !== arr[i]) {
       answer.push(arr[i]);
-      abc = arr[i];
-    } else if (top === arr[i]) {
-      //abc = arr[i];
-      answer.pop(arr[i]);
-      console.log(abc);
-      if (abc !== arr[i]) {
-        console.log("1");
-        answer.pop(arr[i]);
+      if (abc === arr[i]) {
+        answer.pop(arr[i - 1]);
       }
-    } else if (abc === top) {
-      console.log("dhkdn");
+    } else if (top === arr[i]) {
+      abc = arr[i];
+      answer.pop(arr[i]);
     }
   }
   return answer;
 }
 
-console.log(solution("browoanoommmnaon"));
+console.log(solution("zyelleyz"));
+//완성
