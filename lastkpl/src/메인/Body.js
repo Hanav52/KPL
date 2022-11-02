@@ -3,6 +3,8 @@ import { Provider, useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { createStore } from "redux";
 import Footer from "../Footer/Footer";
+import SignIn from "../로그인&회원가입/Login";
+import RegisterTest from "../로그인&회원가입/RegisterTest";
 import DetailPage from "../상세페이지/상세페이지";
 import SubCategory from "../카테고리 별 글 목록/SubCategory";
 import HeaderMenu from "../헤더/Header";
@@ -46,6 +48,12 @@ export default function Body() {
                 <Route exact path='/'>
                   <Hcompo/>
                   <CoComponent/>
+                </Route>
+                <Route path='/login'>
+                  <SignIn/>
+                </Route>
+                <Route path='/register'>
+                  <RegisterTest/>
                 </Route>
                 <Route path='/cate'>
                   <Hcompo/>
