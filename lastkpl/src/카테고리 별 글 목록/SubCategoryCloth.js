@@ -24,7 +24,7 @@ function Cloth({res, rescolor, page, setPage, total, onClick, onChange}) {
                   <dl className="thumb">
                     <dt>
                       <div>
-                        <img src={`http://35.89.73.172:3000/${b_url}`} alt="이미지"></img>
+                        <img src={`http://54.200.255.83:3000/${b_url}`} alt="이미지"></img>
                       </div>
                     </dt>
                     <dd className="item_info">

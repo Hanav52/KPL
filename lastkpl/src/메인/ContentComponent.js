@@ -95,7 +95,7 @@ export default function CoComponent() {
                                 <li className='item-list slick-slide madeProudct' key={id}>
                                     <dl className='thumb'>
                                         <dt>
-                                            <div><img src={`http://35.89.73.172:3000/${b_url}`} alt="이미지"></img></div>
+                                            <div><img src={`http://54.200.255.83:3000/${b_url}`} alt="이미지"></img></div>
                                         </dt>
                                         <dd className='item_info'>
                                             <div className='item_top'>
