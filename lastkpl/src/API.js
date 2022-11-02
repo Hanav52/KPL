@@ -1,6 +1,6 @@
 import axios from "axios";
 // 서버 url
-const apiUrl = "http://35.89.73.172:3000/";
+const apiUrl = "http://54.200.255.83:3000/";
 // instance 생성
 const instance = axios.create({
   baseURL: apiUrl,
@@ -13,6 +13,10 @@ export const getRegister = async (data, header) => {
 // 아이디 중복확인 API
 export const getIdCheck = async (userId) => {
     const response = await instance.get(`/auth/newidcheck/${userId}`, userId)
+    return response;
+}
+export const getRefreshToken = async (token) => {
+    const response = await instance.post(`/auth/token`, token)
     return response;
 }
 // 대분류 카테고리 API
