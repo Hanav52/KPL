@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { BrowserRouter as Route, Router, Switch, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { getRefreshToken } from '../API';
 
 const theme = createTheme({
   palette: {
@@ -45,23 +46,23 @@ export default function SignIn() {
     axios.defaults.headers['Access-Control-Allow-Origin'] = '*';
     // axios.defaults.withCredentials = true;
     const onSubmit = (e) => {
-            axios.post('http://35.89.73.172:3000/auth/login', data, {
+            axios.post('http://54.200.255.83:3000/auth/login', data, {
                 headers: {
                 'Content-Type': 'application/json'
                 }
               }
             ).then(function (response) {
               console.log(response)
-                // window.localStorage.setItem("LoginId" , response.data.loginId);
-                // window.localStorage.setItem("AccessToken", response.data.accessToken);
-                // window.localStorage.setItem("AccessTokenExpiresIn", response.data.accessTokenExpiresIn);
-                // window.localStorage.setItem("RefreshToken", response.data.refreshToken);
-                // window.localStorage.setItem("RefreshTokenExpiresIn", response.data.refreshTokenExpiresIn);
-                // window.localStorage.setItem("UserId", response.data.userId);
-                // window.localStorage.setItem("State", true); //false 에서 true로 변환 로그인 버튼에서 알림, 아이디, 프로필이 나와야한다.
-                // history.push("/");
-                // history.go(1);
-                // history.go(0);
+                localStorage.setItem("LoginId" , response.data.id);
+                localStorage.setItem("AccessToken", response.data.accessToken);
+                localStorage.setItem("AccessTokenExpiresIn", response.data.accessTokenExpiresIn);
+                localStorage.setItem("RefreshToken", response.data.refreshToken);
+                localStorage.setItem("RefreshTokenExpiresIn", response.data.refreshTokenExpiresIn);
+                localStorage.setItem("UserId", response.data.userId);
+                localStorage.setItem("State", true); //false 에서 true로 변환 로그인 버튼에서 알림, 아이디, 프로필이 나와야한다.
+                history.push("/");
+                history.go(1);
+                history.go(0);
             }).catch(function (error) {
                 alert("아이디 및 비밀번호를 틀리셨습니다.");
             }).then(function() {
