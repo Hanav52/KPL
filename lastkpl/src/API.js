@@ -15,9 +15,15 @@ export const getIdCheck = async (userId) => {
     const response = await instance.get(`/auth/newidcheck/${userId}`, userId)
     return response;
 }
+// RefrshToken 재발급 API
 export const getRefreshToken = async (token) => {
     const response = await instance.post(`/auth/token`, token)
     return response;
+}
+// 로그아웃 API
+export const getLogout = async (data) => {
+  const response = await instance.post(`/auth/logout`, data)
+  return response;
 }
 // 대분류 카테고리 API
 export const getMainCategory = async () => {
