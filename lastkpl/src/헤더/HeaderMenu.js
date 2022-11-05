@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { getMainCategory, getRecent } from '../API';
 import '../RealMain.css'
+import GetRefreshToken from '../RefreshToken';
+import LogoutUser from '../로그인&회원가입/Logout';
+import GetRefresh from '../로그인&회원가입/Logout';
 
 export default function Hcompo() {
 
@@ -41,13 +44,13 @@ export default function Hcompo() {
                             </div>
                         </li>
                         <li>
-                            {!visible ? <Link className='abcd' >로그인</Link> : <Link className='abcd' >로그아웃</Link> }
+                            {!visible ? <Link className='abcd'>로그인</Link> : <LogoutUser/> }
                         </li>
                         <li>
                         {!visible ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("LoginId")}</Link> }
                         </li>
                         <li>
-                            <Link className='abcd'>장바구니</Link>
+                            <Link className='abcd'><GetRefreshToken/></Link>
                             <div className='user_bascket'>0</div>
                         </li>
                         <li>
