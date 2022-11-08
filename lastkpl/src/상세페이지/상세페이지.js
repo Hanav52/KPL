@@ -11,8 +11,12 @@ export default function DetailPage () {
   const ClothAPI = async () => {
     try {
       const response = await getClothAPI(1);
-      console.log(response.data.data1);
+      console.log(response.data.data1[0].detailpicture_url);
       setRes(response.data.data1)
+      setResImage(response.data.data1[0].detailpicture_url)
+    //   for(let a = 0; a < response.data.data1.length; a++) {
+    //     setResImage(response.data.data1[0].detailpicture_url[a].url)
+    // };
     } catch (e) {
       console.error(e);
     }
@@ -23,6 +27,7 @@ export default function DetailPage () {
   }, [])
 
   const [res, setRes] = useState([]);
+  const [resimage, setResImage] = useState([]);
 
     return (
         <BrowserRouter>
@@ -30,7 +35,7 @@ export default function DetailPage () {
                 <div className="contentWrap">
                     <div className="content">
                         <div className="shop_detail" id="productDetail">
-                            <TOP res={res}/>
+                            <TOP res={res} resimage={resimage}/>
                             <MID/>
                             <BOT/>
                         </div>

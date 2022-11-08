@@ -6,7 +6,7 @@ import Select from "@mui/material/Select";
 import { useState } from "react";
 
 
-export default function TOP ({res}) {
+export default function TOP ({res, resimage}) {
 
     const [age, setAge] = useState("");
 
@@ -17,15 +17,17 @@ export default function TOP ({res}) {
     return (
         <div className="proudct_info_box">
             <div className="wrapper clearfix">
-            {res.map(({b_name, b_num, b_price, b_time, b_url, b_views}) => (
+            {res.map(({b_name, b_num, b_price, b_time, b_url, b_views, detail_url, detailpicture_url}) => (
                 <>
                 <div className="product_img_box">
                     <div className="thumb clearfix">
                         <div  className="gallery-top gallery-container">
-
+                            <img src={`http://54.200.255.83:3000/${b_url}`} alt="이미지"></img>
                         </div>
                         <div className="gallery-thumbs gallery-container">
-
+                        {resimage.map(({url}) => (
+                            <img src={`http://54.200.255.83:3000/${url}`} alt="이미지"></img>
+                        ))}
                         </div>
                     </div>
                 </div>
@@ -149,8 +151,9 @@ export default function TOP ({res}) {
                                         </table>
                                     </div>
                                     <div className="prd-btns">
-                                        <button className="btn_buy">BUT IT NOW{/*다 수정해야함*/}</button>
-                                        <button className="btn_cart">ADD TO CART</button>
+                                        <a className="btn_buy">BUT IT NOW</a>
+                                        <a className="btn_cart">ADD TO CART</a>
+                                        <a className="btn_cart">WISH LIST</a>
                                     </div>
                                 </div>
                             </form>
