@@ -4,6 +4,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState } from "react";
+import '../RealMain.css'
 
 
 export default function TOP ({res, resimage}) {
@@ -15,7 +16,7 @@ export default function TOP ({res, resimage}) {
     };
 
     return (
-        <div className="proudct_info_box">
+        <div className="product_info_box">
             <div className="wrapper clearfix">
             {res.map(({b_name, b_num, b_price, b_time, b_url, b_views, detail_url, detailpicture_url}) => (
                 <>

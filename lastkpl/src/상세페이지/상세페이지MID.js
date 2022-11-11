@@ -49,8 +49,9 @@ export default function Mid({resimage}) {
     setValue(newValue);
   };
 
+
   return (
-    <Box sx={{ width: '100%', padding: '12rem' }}>
+    <Box sx={{ width: '100%', padding: '0 12rem' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
           <Tab label="상세페이지" {...a11yProps(0)} />
@@ -62,7 +63,9 @@ export default function Mid({resimage}) {
         <MidDetail resimage={resimage}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <ProductComment/>
+        <body className='renewed_widget'>
+          <ProductComment/>
+        </body>
       </TabPanel>
       <TabPanel value={value} index={2}>
         상품문의

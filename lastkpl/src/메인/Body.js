@@ -20,7 +20,6 @@ function reducer(currentState, action) {
       }
     }
     const newSort = {...currentState};
-    const newCategoryid = {...currentState};
 
     if(action.type === '낮은 가격순') {
       newSort.sort = 'b_price,asc'
