@@ -50,8 +50,18 @@ export const getCommentAPI = async (b_num, page, size, sort) => {
   const response = await instance.get(`/detail/showcomment/?b_num=${b_num}&page=${page}&size=${size}&sort=${sort}`)
   return response;
 }
-// export const getCommentAPI = async () => {
-//   const response = await instance.get(`/detail/showcomment`)
-//   console.log(response)
-//   return response;
-// }
+//댓글 저장 API
+export const getSaveCommentAPI = async (b_num, u_num, id, comment) => {
+  const response = await instance.post(`/detail/addcomment/?b_num=${b_num}&u_num=${u_num}&id=${id}&comment=${comment}`)
+  return response;
+}
+//댓글 수정 API
+export const getUpdateCommentAPI = async (index, b_num, u_num, id, newcomment) => {
+  const response = await instance.update(`/detail/updatecomment/?index=${index}&b_num=${b_num}&u_num=${u_num}&id=${id}&newcomment=${newcomment}`)
+  return response;
+}
+//댓글 삭제 API
+export const getDeleteCommentAPI = async (index, b_num, u_num, id) => {
+  const response = await instance.delete(`/detail/deletecomment/?index=${index}&b_num=${b_num}&u_num=${u_num}&id=${id}`)
+  return response;
+}
