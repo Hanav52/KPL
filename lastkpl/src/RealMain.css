@@ -992,3 +992,15 @@ body #content {
 .widget_reviews__body {
     border-bottom: 1px solid #dadada;
 }
+.filter_sort_basic__search {
+    float: right;
+    padding: 30px 0 16px 8px;
+    font-size: 16px;
+}
+.filter_sort_basic_search_input_container {
+    position: relative;
+    box-sizing: border-box;
+    height: 32px;
+    border: solid 1px #d8dde5;
+    border-radius: 4px;
+}
