@@ -45,3 +45,13 @@ export const getClothAPI = async (b_num) => {
   const response = await instance.get(`/detail/detailpage/${b_num}`)
   return response;
 }
+//댓글 호출 API
+export const getCommentAPI = async (b_num, page, size, sort) => {
+  const response = await instance.get(`/detail/showcomment/?b_num=${b_num}&page=${page}&size=${size}&sort=${sort}`)
+  return response;
+}
+// export const getCommentAPI = async () => {
+//   const response = await instance.get(`/detail/showcomment`)
+//   console.log(response)
+//   return response;
+// }
