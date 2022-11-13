@@ -44,7 +44,7 @@ export default function Hcompo() {
                             </div>
                         </li>
                         <li>
-                            {!visible ? <Link className='abcd'>로그인</Link> : <LogoutUser/> }
+                            {!visible ? <Link className='abcd' to="/login">로그인</Link> : <LogoutUser/> }
                         </li>
                         <li>
                         {!visible ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("LoginId")}</Link> }
