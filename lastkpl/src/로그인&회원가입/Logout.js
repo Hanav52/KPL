@@ -9,31 +9,27 @@ export default function LogoutUser() {
 
     const data = {
         id : localStorage.getItem("Id"),
-        AccessToken : localStorage.getItem("AccessToken")
     }
 
     const LogoutUser = () => {
-        axios.post("http://54.200.255.83:3000/auth/logout",data)
+        axios.post("http://54.200.255.83:3000/auth/logout", data, {
+          headers: {
+            'Authorization': `Bearer ` + localStorage.getItem("AccessToken")
+          }})
           .then(function (response) {
-            localStorage.removeItem("Id");
-            localStorage.removeItem("AccessToken");
-            localStorage.removeItem("AccessTokenExpiresIn");
-            localStorage.removeItem("RefreshToken");
-            localStorage.removeItem("RefreshTokenExpiresIn");
-            localStorage.setItem("State", false);
-            alert(response.data.data);
+            alert(response.data.logoutid + "님 안녕히가세요.");
+            console.log(response)
+            localStorage.clear()
             history.push("/");
             history.go(0);
           }).catch(function (error) {
-            localStorage.removeItem("State")
+            localStorage.clear()
+            localStorage.setItem("State")
             alert("로그인이 만료되었습니다.");
             history.push("/login");
             history.go(1);
             console.log(error)
-          }).then(function() {
-            localStorage.removeItem("State")
-            
-          });
+          })
       }
 
     return (

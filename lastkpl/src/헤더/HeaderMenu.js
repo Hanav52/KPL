@@ -10,9 +10,8 @@ import GetRefresh from '../로그인&회원가입/Logout';
 export default function Hcompo() {
 
     const [state, setState] = useState(true)
-    const [visible, setVisible] = useState(localStorage.getItem("State"))
+    const [visible, setVisible] = useState(false)
     const history = useHistory();
-
     // 카테고리 API 저장
     const [newbest, setNewBest] = useState([]);
     const [category, setCategory] = useState([]);
@@ -20,7 +19,6 @@ export default function Hcompo() {
     const Category = async (e) => {
         try {
             const response = await getMainCategory();
-                console.log(response.data)
                 setNewBest(response.data.data1);
                 setCategory(response.data.data2);
         } catch (e) {
@@ -28,8 +26,9 @@ export default function Hcompo() {
         }
     }
     useEffect(()=> {
+        setVisible(localStorage.getItem("State"));
         Category();
-    },[])
+    },[setVisible])
 
     return (
         <div className="header">
@@ -47,7 +46,7 @@ export default function Hcompo() {
                             {!visible ? <Link className='abcd' to="/login">로그인</Link> : <LogoutUser/> }
                         </li>
                         <li>
-                        {!visible ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("LoginId")}</Link> }
+                        {!visible ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("Id")}</Link> }
                         </li>
                         <li>
                             <Link className='abcd'><GetRefreshToken/></Link>

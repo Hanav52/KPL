@@ -53,16 +53,17 @@ export default function SignIn() {
               }
             ).then(function (response) {
               console.log(response)
-                localStorage.setItem("LoginId" , response.data.id);
+                localStorage.setItem("Id" , response.data.id);
+                localStorage.setItem("idIndex" , response.data.idIndex);
                 localStorage.setItem("AccessToken", response.data.accessToken);
-                localStorage.setItem("AccessTokenExpiresIn", response.data.accessTokenExpiresIn);
+                localStorage.setItem("AccessTokenExpiresIn", response.data.accessTokenexpiresIn);
                 localStorage.setItem("RefreshToken", response.data.refreshToken);
-                localStorage.setItem("RefreshTokenExpiresIn", response.data.refreshTokenExpiresIn);
-                localStorage.setItem("UserId", response.data.userId);
+                localStorage.setItem("RefreshTokenExpiresIn", response.data.refreshTokenexpiresIn);
                 localStorage.setItem("State", true); //false 에서 true로 변환 로그인 버튼에서 알림, 아이디, 프로필이 나와야한다.
                 history.push("/");
                 history.go(1);
                 history.go(0);
+                alert("안녕하세요. " + response.data.id + "님");
             }).catch(function (error) {
                 alert("아이디 및 비밀번호를 틀리셨습니다.");
             }).then(function() {
