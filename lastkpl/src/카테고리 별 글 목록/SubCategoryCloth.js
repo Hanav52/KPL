@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 import Search from "./Search";
 import Sort from "./Sort";
@@ -19,6 +20,7 @@ function Cloth({res, rescolor, page, setPage, total, onClick, onChange}) {
             <div className="product_list_box">
               <ul className="item-cont">
                 {res.map(({b_name, b_price, b_url, b_views, b_num}) => (
+                  <Link to="/detail">
                     <li className="item-list slick-slide madeProudct">
                   {localStorage.setItem("b_num", b_num)}
                   <dl className="thumb">
@@ -52,6 +54,7 @@ function Cloth({res, rescolor, page, setPage, total, onClick, onChange}) {
                     </dd>
                   </dl>
                 </li>
+                </Link>
                 ))}
                 
               </ul>
