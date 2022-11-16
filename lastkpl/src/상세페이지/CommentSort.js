@@ -1,15 +1,12 @@
 import { ButtonGroup } from "@mui/material";
 import { Button } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 
-export default function CommentSort() {
-
-  const dispatch = useDispatch();
+export default function CommentSort({setDesc}) {
 
     return(
-            <ButtonGroup variant="text" aria-label="text button group">
-              <Button onClick={() => dispatch({ type: '최신순'})} >최신순</Button>
-              <Button onClick={() => dispatch({ type: '오래된순'})} >오래된순</Button>
-            </ButtonGroup>
+        <ButtonGroup variant="text" aria-label="text button group" className="filter_sort_basic__sort">
+              <Button onClick={() => setDesc("c_time,desc")}>최신순</Button>
+              <Button onClick={() => setDesc("c_time,asc")}>오래된순</Button>
+        </ButtonGroup>
     )
   }
