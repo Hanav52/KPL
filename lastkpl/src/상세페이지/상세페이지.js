@@ -5,35 +5,20 @@ import BOT from "./상세페이지BOT";
 import MID from "./상세페이지MID";
 import TOP from "./상세페이지TOP";
 import '../RealMain.css'
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-
-// redux
-function reducer(currentState, action) {
-  if(currentState === undefined){
-    return {
-      sort: "c_time,desc",
-      categoryid: 0,
-    }
-  }
-  const newSort = {...currentState};
-
-  if(action.type === '최신순') {
-    newSort.sort = 'c_time,desc'
-  }
-  else if(action.type === '오래된순') {
-    newSort.sort = 'c_time,asc'
-  }
-  return newSort;
-}
-const store = createStore(reducer);
 
 export default function DetailPage () {
+
+  const [res, setRes] = useState([]);
+  const [resimage, setResImage] = useState([]);
+  const [rescomment, setResComment] = useState([]);
+  const [page, setPage] = useState(1);
+  const [desc, setDesc] = useState("c_time,desc")
 
 // api 호출
   const ClothAPI = async () => {
     try {
-      const response = await getClothAPI(1);
+      const response = await getClothAPI(localStorage.getItem("b_num"));
+      console.log(response)
       setRes(response.data.data1)
       setResImage(response.data.data1[0].detailpicture_url)
     } catch (e) {
@@ -41,39 +26,34 @@ export default function DetailPage () {
     }
   };
 // 댓글 api 호출
-  const CommentAPI = async () => {
+  const CommentAPI = async (desc, page) => {
     try {
-      const response = await getCommentAPI(1, 1, 10, "c_time,desc");
+      const response = await getCommentAPI(localStorage.getItem("b_num"), page, 5, desc);
       console.log(response)
+      setResComment(response.data);
     } catch (e) {
       console.error(e);
     }
   };
 
-
   useEffect(() => {
     ClothAPI();
-    CommentAPI();
-  }, [])
-
-  const [res, setRes] = useState([]);
-  const [resimage, setResImage] = useState([]);
+    CommentAPI(desc, page);
+  }, [desc, page])
 
     return (
         <BrowserRouter>
-          <Provider store={store}>
             <div className="contentWrapper">
                 <div className="contentWrap">
                     <div className="content">
                         <div className="shop_detail" id="productDetail">
                             <TOP res={res} resimage={resimage}/>
-                            <MID resimage={resimage}/>
+                            <MID resimage={resimage} rescomment={rescomment} page={page} setPage={setPage} setDesc={setDesc}/>
                             <BOT/>
                         </div>
                     </div>
                 </div>
             </div>
-          </Provider>
         </BrowserRouter>
     )
 }

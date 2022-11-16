@@ -42,7 +42,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Mid({resimage}) {
+export default function Mid({resimage, rescomment, page, setPage, setDesc}) {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -64,7 +64,7 @@ export default function Mid({resimage}) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <body className='renewed_widget'>
-          <ProductComment/>
+          <ProductComment rescomment={rescomment} page={page} setPage={setPage} setDesc={setDesc}/>
         </body>
       </TabPanel>
       <TabPanel value={value} index={2}>
