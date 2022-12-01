@@ -443,7 +443,7 @@ address, em {
     position: relative;
 }
 .wrapper {
-    width: 1366px;
+    width: 100%;
     position: relative;
     margin: 0 auto;
 }
@@ -780,7 +780,6 @@ table {
 .review_list_v2 {
     padding: 32px 0;
     border-bottom: 1px solid #d8dde5;
-    font-size: 0;
 }
 .review_list_v2__review_lcontent {
     display: inline-block;
@@ -904,7 +903,7 @@ table {
     margin-right: 4px;
     font-weight: bold;
 }
-body.renewed_widget {
+.renewed_widget {
     box-sizing: border-box;
     width: 100%;
     min-width: 720px;
