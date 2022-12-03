@@ -18,13 +18,23 @@ export default function LogoutUser() {
           }})
           .then(function (response) {
             alert(response.data.logoutid + "님 안녕히가세요.");
-            console.log(response)
-            localStorage.clear()
+            localStorage.removeItem("Id");
+            localStorage.removeItem("idIndex");
+            localStorage.removeItem("AccessToken");
+            localStorage.removeItem("AccessTokenExpiresIn");
+            localStorage.removeItem("RefreshToken");
+            localStorage.removeItem("RefreshTokenExpiresIn");
+            localStorage.setItem("State", false);
             history.push("/");
             history.go(0);
           }).catch(function (error) {
-            localStorage.clear()
-            localStorage.setItem("State")
+            localStorage.removeItem("Id");
+            localStorage.removeItem("idIndex");
+            localStorage.removeItem("AccessToken");
+            localStorage.removeItem("AccessTokenExpiresIn");
+            localStorage.removeItem("RefreshToken");
+            localStorage.removeItem("RefreshTokenExpiresIn");
+            localStorage.setItem("State", false);
             alert("로그인이 만료되었습니다.");
             history.push("/login");
             history.go(1);
