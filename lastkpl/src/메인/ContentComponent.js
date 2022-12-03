@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { getRecent } from '../API';
 import '../RealMain.css'
+import normalImag from '../프로필/normalimage.png'
+import styled from "styled-components";
 
+const Img = styled.img`
+  width: 100px;
+  height: 550px;
+`;
 // ImageSlide 함수
 function ImageSlide() {
     return (
       <Carousel>
         <Carousel.Item>
-          <img
+          <Img
             className="d-block w-100"
-            src=""
+            src={normalImag}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -19,9 +25,9 @@ function ImageSlide() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img
+          <Img
             className="d-block w-100"
-            src="holder.js/800x400?text=Second slide&bg=282c34"
+            src={normalImag}
             alt="Second slide"
           />
   
@@ -31,9 +37,9 @@ function ImageSlide() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img
+          <Img
             className="d-block w-100"
-            src="holder.js/800x400?text=Third slide&bg=20232a"
+            src={normalImag}
             alt="Third slide"
           />
   
