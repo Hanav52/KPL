@@ -27,7 +27,7 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://bestinu.atlassian.net/jira/software/projects/AHA/boards/1" style={{cursor: 'pointer'}} underline="hover">
+      <Link color="inherit" href="https://www.notion.so/KPL-211313ef5f1d428480cce6be419cc395" style={{cursor: 'pointer'}} underline="hover">
       KPL
       </Link>{' '}
       {new Date().getFullYear()}
@@ -54,14 +54,13 @@ export default function SignIn() {
             ).then(function (response) {
               console.log(response)
                 localStorage.setItem("Id" , response.data.id);
-                localStorage.setItem("idIndex" , response.data.idIndex);
+                localStorage.setItem("idIndex" , response.data.u_num);
                 localStorage.setItem("AccessToken", response.data.accessToken);
                 localStorage.setItem("AccessTokenExpiresIn", response.data.accessTokenexpiresIn);
                 localStorage.setItem("RefreshToken", response.data.refreshToken);
                 localStorage.setItem("RefreshTokenExpiresIn", response.data.refreshTokenexpiresIn);
                 localStorage.setItem("State", true); //false 에서 true로 변환 로그인 버튼에서 알림, 아이디, 프로필이 나와야한다.
                 history.push("/");
-                history.go(1);
                 history.go(0);
                 alert("안녕하세요. " + response.data.id + "님");
             }).catch(function (error) {
