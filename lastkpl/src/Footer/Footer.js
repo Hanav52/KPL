@@ -1,5 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
 import '../RealMain.css'
+import styled from "styled-components";
+
+const Div = styled.div`
+  width: 100px;
+  height: 20px;
+`;
 
 export default function Footer() {
     return (
@@ -16,7 +22,7 @@ export default function Footer() {
                         </span>
                         <p className='shop_info'>
                             <span>상호 : 주식회사 KPL</span>
-                            <span>대표 : 이준기, 김승민, 박정우</span>
+                            <span>대표 : 이준기, 김승민, 박정우&nbsp;</span>
                             <span>개인정보 보호 책임자 : 김승민</span>
                             <br/>
                             <span>Email : wnsrl8329@gmail.com</span> 
