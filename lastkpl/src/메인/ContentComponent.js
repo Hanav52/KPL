@@ -3,6 +3,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { getRecent } from '../API';
 import '../RealMain.css'
 import normalImag from '../프로필/normalimage.png'
+import cloth from './다운로드.jpg'
+import cloth1 from './다운로드1.jpg'
+import cloth2 from './다운로드2.jpg'
 import styled from "styled-components";
 
 const Img = styled.img`
@@ -16,39 +19,23 @@ function ImageSlide() {
         <Carousel.Item>
           <Img
             className="d-block w-100"
-            src={normalImag}
+            src={cloth}
             alt="First slide"
           />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <Img
             className="d-block w-100"
-            src={normalImag}
+            src={cloth1}
             alt="Second slide"
           />
-  
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <Img
             className="d-block w-100"
-            src={normalImag}
+            src={cloth2}
             alt="Third slide"
           />
-  
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     );
