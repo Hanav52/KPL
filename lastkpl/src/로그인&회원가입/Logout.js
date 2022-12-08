@@ -17,24 +17,13 @@ export default function LogoutUser() {
             'Authorization': `Bearer ` + localStorage.getItem("AccessToken")
           }})
           .then(function (response) {
+            console.log(response)
             alert(response.data.logoutid + "님 안녕히가세요.");
-            localStorage.removeItem("Id");
-            localStorage.removeItem("idIndex");
-            localStorage.removeItem("AccessToken");
-            localStorage.removeItem("AccessTokenExpiresIn");
-            localStorage.removeItem("RefreshToken");
-            localStorage.removeItem("RefreshTokenExpiresIn");
-            localStorage.setItem("State", false);
+            localStorage.clear();
             history.push("/");
             history.go(0);
           }).catch(function (error) {
-            localStorage.removeItem("Id");
-            localStorage.removeItem("idIndex");
-            localStorage.removeItem("AccessToken");
-            localStorage.removeItem("AccessTokenExpiresIn");
-            localStorage.removeItem("RefreshToken");
-            localStorage.removeItem("RefreshTokenExpiresIn");
-            localStorage.setItem("State", false);
+            localStorage.clear()
             alert("로그인이 만료되었습니다.");
             history.push("/login");
             history.go(1);
@@ -43,7 +32,7 @@ export default function LogoutUser() {
       }
 
     return (
-        <Link onClick={LogoutUser}>
+        <Link onClick={LogoutUser} className="abcd">
             로그아웃
         </Link>
     )
