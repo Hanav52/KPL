@@ -3,18 +3,33 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { getMainCategory, getRecent } from '../API';
 import '../RealMain.css'
-import GetRefreshToken from '../RefreshToken';
 import LogoutUser from '../로그인&회원가입/Logout';
-import GetRefresh from '../로그인&회원가입/Logout';
+import styled from "styled-components";
+import axios from 'axios';
+import { GetRefreshToken } from '../RefreshToken';
+
+// img컴포넌트 style컴포넌트로 만들기
+const Div = styled.div`
+  padding-bottom: 10px;
+  width: 100%;
+  display: flex;
+  padding: 0 2rem;
+  flex-direction: column;
+  @media screen and (min-width: 1200px) {
+    max-width: 1500px;
+  }
+`;
 
 export default function Hcompo() {
 
     const [state, setState] = useState(true)
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState()
     const history = useHistory();
+    
     // 카테고리 API 저장
     const [newbest, setNewBest] = useState([]);
     const [category, setCategory] = useState([]);
+    console.log(visible)
 
     const Category = async (e) => {
         try {
@@ -25,35 +40,38 @@ export default function Hcompo() {
            console.error(e);
         }
     }
+
+    const Mypage = () => {
+        if(visible === null) {
+            alert("로그인 후 이용해주세요.");
+        } else {
+            GetRefreshToken();
+            history.push("/profile");
+            history.go(0);
+        }
+    }
+
     useEffect(()=> {
         setVisible(localStorage.getItem("State"));
         Category();
     },[setVisible])
 
     return (
-        <div className="header">
+        <Div className="header">
             <div className='header_top'>
                 <div className='wrapper'>
                     <ul className='gnd'>
                         <li>
-                            <div className='searchArea'>
-                                <div className='search'>
-                                    검색이 들어가야함
-                                </div>
-                            </div>
+                            {visible === null ? <Link className='abcd' to="/login">로그인</Link> : <LogoutUser/> }
                         </li>
                         <li>
-                            {!visible ? <Link className='abcd' to="/login">로그인</Link> : <LogoutUser/> }
+                        {visible === null ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("Id")}</Link> }
                         </li>
                         <li>
-                        {!visible ? <Link className='abcd' >회원가입</Link> : <Link className='abcd' >{localStorage.getItem("Id")}</Link> }
+                            <Link className='abcd'>장바구니 ( 0 )</Link>
                         </li>
                         <li>
-                            <Link className='abcd'><GetRefreshToken/></Link>
-                            <div className='user_bascket'>0</div>
-                        </li>
-                        <li>
-                            <Link className='abcd'>마이페이지</Link>
+                            <Link className='abcd' to="/profile" onClick={Mypage}>마이페이지</Link>
                         </li>
                     </ul>    
                 </div>                
@@ -131,6 +149,6 @@ export default function Hcompo() {
                     </div>
                 </div>                
             </div>
-        </div>
+        </Div>
     )
 }
