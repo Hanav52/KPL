@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import { getClothAPI, getCommentAPI } from "../API";
+import { getClothAPI, getCommentAPI, getUserAPI } from "../API";
 import '../RealMain.css'
 import CenterProfile from "./CenterProfile";
 import SideProfile from "./SideProfile";
 import styled from "styled-components";
+import BasketBody from "../장바구니/장바구니구니";
+import Bascket from "../장바구니/장바구니";
 
 const Div = styled.div`
   width: 100%; /* 가로 사이즈가 1200px 넘는 해상도에서는 max-width 설정 */
@@ -20,11 +22,28 @@ const Div = styled.div`
 
 export default function MyProfile () {
 
+  const [profile, setProfile] = useState("");
+  // 회원정보API
+  const UserAPI = async () => {
+      try {
+        const response = await getUserAPI(localStorage.getItem("Id"));
+        console.log(response)
+        setProfile(response)
+      } catch (e) {
+        console.error(e);
+      }
+  };
+
+  useEffect(() => {
+      UserAPI();
+  },[])
+
     return (
         <Route path='/profile'>
             <Div>
-                <SideProfile></SideProfile>
-                <CenterProfile></CenterProfile>
+                <SideProfile profile={profile}></SideProfile>
+                {/* <CenterProfile profile={profile}></CenterProfile> */}
+                <Bascket/>
             </Div>
         </Route>
     )
