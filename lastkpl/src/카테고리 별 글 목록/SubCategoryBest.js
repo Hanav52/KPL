@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function TimeBest({res1, rescolor1}) {
+  const history = useHistory();
   return (
     <>
       <div className="section" id="timeBest">
@@ -14,8 +15,9 @@ function TimeBest({res1, rescolor1}) {
             <div className="product_list_box">
               <ul className="item-cont">
                 {res1.map(({b_name, b_price, b_url, b_views, b_num}) => (
-                  <Link to="/detail">
-                    {localStorage.setItem("b_num", b_num)}
+                  <Link to="/detail" onClick={() => {
+                    localStorage.setItem("b_num", b_num)
+                    history.push("/detail"); history.go(0)}}>
                     <li className="item-list slick-slide madeProudct">
                   <dl className="thumb">
                     <dt>
