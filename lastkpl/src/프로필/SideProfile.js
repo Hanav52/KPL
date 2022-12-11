@@ -3,6 +3,9 @@ import { BrowserRouter, Link } from "react-router-dom";
 import { getClothAPI, getCommentAPI } from "../API";
 import '../RealMain.css'
 import styled from "styled-components";
+import UpdateIntro from "./UpdateUser";
+import DeleteUser from "./DeleteUser";
+import Bascket from "../장바구니/장바구니";
 
 const Div = styled.div`
   width: 30%; /* 가로 사이즈가 1200px 넘는 해상도에서는 max-width 설정 */
@@ -20,7 +23,8 @@ padding: 0;
 margin: 0;
 `;
 
-export default function SideProfile () {
+
+export default function SideProfile ({profile}) {
 
     return (
             <Div>
@@ -33,7 +37,7 @@ export default function SideProfile () {
                                     <h3>쇼핑정보</h3>
                                     <Ul>
                                         <Li>
-                                            <Link className="pagea">장바구니</Link>
+                                            <Link className="pagea"></Link>
                                         </Li>
                                     </Ul>
                                 </DD>
@@ -49,10 +53,12 @@ export default function SideProfile () {
                                     <h3>회원정보</h3>
                                     <Ul>
                                         <Li>
-                                            <Link className="pagea">회원정보 변경</Link>
+                                            {/* <Link className="pagea">회원정보 변경</Link> */}
+                                            <UpdateIntro profile={profile}/>
                                         </Li>
                                         <Li>
-                                            <Link className="pagea">회원탈퇴</Link>
+                                            {/* <Link className="pagea">회원탈퇴</Link> */}
+                                            <DeleteUser/>
                                         </Li>
                                     </Ul>
                                 </DD>
