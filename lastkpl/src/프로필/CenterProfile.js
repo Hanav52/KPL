@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
-import { getClothAPI, getCommentAPI } from "../API";
 import '../RealMain.css'
 
 const Div = styled.div`
@@ -10,7 +7,7 @@ const Div = styled.div`
   padding: 0rem 4rem; /* 좌우 padding 을 살짝 주어서, 좌우에 딱 붙지 않도록 함 */
 `;
 
-export default function CenterProfile () {
+export default function CenterProfile ({profile}) {
 
     return (
         <Div>
@@ -20,11 +17,11 @@ export default function CenterProfile () {
                         <h2>회원정보</h2>
                         <div className="group">
                             <form className="formtest">
-                                <input placeholder="이름"/>
-                                <input placeholder="아이디"/>
-                                <input placeholder="성별"/>
-                                <input placeholder="키"/>cm
-                                <input placeholder="몸무게"/>kg
+                                이름 : <input placeholder="이름" value={profile.name} readOnly/><p/>
+                                아이디 : <input placeholder="아이디" value={profile.id} readOnly/><p/>
+                                성별 : <input placeholder="성별" value={profile.sex} readOnly/><p/>
+                                키 : <input placeholder="키" value={profile.weight === null ? "회원정보 변경해주세요" : profile.height + "cm"} readOnly/><p/>
+                                몸무게 : <input placeholder="몸무게" value={profile.weight === null ? "회원정보 변경해주세요" : profile.weight + "kg"} readOnly/>
                             </form>
                         </div>
                     </div>
