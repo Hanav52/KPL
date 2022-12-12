@@ -80,7 +80,7 @@ export default function AddComment() {
   const config = {
     headers: {
       'Authorization': 'Bearer ' + localStorage.getItem("AccessToken"),
-    'Content-Type': 'multipart/form-data'
+      'Content-Type': 'multipart/form-data'
     }};
 
   const handleClickOpen = () => {
@@ -108,13 +108,12 @@ export default function AddComment() {
     for (let i = 0; i < files.length; i++) {
       formData.append("c_img", files[i]);
     }
-    let entries = formData.entries();
-    for (const pair of entries) {
-        console.log(pair[0]+ ', ' + pair[1]); 
-    }
-    const response = await getSaveCommentAPI(formData, config);
+    try {
+      const response = await getSaveCommentAPI(formData);
     console.log(response)
-
+    } catch (e) {
+      console.error(e);
+    }
   };
 // localstorage에서 데이터 받아오기
   const [visible, setVisible] = useState();
