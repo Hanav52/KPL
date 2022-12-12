@@ -8,19 +8,13 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import moment from "moment";
-import { instance } from '../API';
+import { getDeleteUserAPI, instance } from '../API';
 import { GetRefreshToken } from '../RefreshToken';
 
 export default function DeleteUser() {
 
   const [open, setOpen] = useState(false);
   const history = useHistory();
-
-  // api header 부분 토큰이 들어가있다.
-  const config = {
-    headers: {
-        'Authorization': 'Bearer ' + localStorage.getItem("AccessToken"),
-    }};
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,13 +26,12 @@ export default function DeleteUser() {
 
   // 사용자를 삭제한다.
   const DeUser = async () => {
-    instance.delete(`/user/${localStorage.getItem("UserId")}`, config)
-    .then(function(response) {
-      console.log(response)
-    localStorage.clear();
-    }).then(function(error) {
-    console.log(error)
-    })
+    try {
+      const response = await getDeleteUserAPI(localStorage.getItem("Id"));
+      localStorage.clear();
+    } catch (e) {
+      console.error(e);
+    }
   }
   const DeleteUs = () => {
     try {
@@ -47,8 +40,8 @@ export default function DeleteUser() {
         setOpen(false);
         DeUser();
         alert("탈퇴 완료")
-        // history.push("/");
-        // history.go(0);
+        history.push("/");
+        history.go(0);
       } catch(e) {
     console.log(e)
   }
