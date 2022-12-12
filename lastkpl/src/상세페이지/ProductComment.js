@@ -3,7 +3,6 @@ import { Route, useHistory } from "react-router-dom";
 import AddComment from "./AddComment";
 import CommentSort from "./CommentSort";
 import Pagination from "./Pagination";
-import SaveComment from "./SaveComment";
 import normalImag from '../프로필/normalimage.png'
 import styled from "styled-components";
 
@@ -46,9 +45,6 @@ export default function ProductComment({ rescomment, page, setPage, setDesc}) {
                 </div>
               </div>
               <div className="review_list_v2__review_rcontent">
-                <div>
-                  <Img src={normalImag} className="img-content" alt="댓글 이미지"/>
-                </div>
                 <div>
                   {id}
                 </div>
