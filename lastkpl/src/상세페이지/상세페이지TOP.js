@@ -7,12 +7,41 @@ import { useState } from "react";
 import '../RealMain.css'
 
 
+
 export default function TOP ({res, resimage}) {
 
-    const [age, setAge] = useState("");
+    const [Content, setContent] = useState("");
+    const [Content1, setContent1] = useState("");
 
-    const handleChange = (event) => {
-        setAge(event.target.value);
+    const onChangeHanlder=(e)=>{
+        setContent(e.target.value);
+    }
+    const onChangeHanlder1=(e)=>{
+        setContent1(e.target.value);
+    }
+    
+    const SelectColorBox = ({res}) => {
+        return (
+            <>
+            <select onChange={onChangeHanlder} value={Content}>
+            {res[0].b_color.map(({b_color}) => (
+                <option key={b_color} value={b_color}>{b_color}</option>
+            ))}
+            </select>
+            </>
+        );
+    };
+
+    const SelectSizeBox = ({res}) => {
+        return (
+            <>
+            <select onChange={onChangeHanlder1} value={Content1}>
+            {res[0].b_size.map(({b_size}) => (
+                <option key={b_size} value={b_size}>{b_size}</option>
+            ))}
+            </select>
+            </>
+        );
     };
 
     return (
@@ -66,25 +95,7 @@ export default function TOP ({res, resimage}) {
                                                             <dl>
                                                                 <dt>COLOR</dt>
                                                                 <dd>
-                                                                    <FormControl sx={{ m: 1, minWidth: 100 }}>
-                                                                        <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
-                                                                        <Select
-                                                                        labelId="demo-simple-select-autowidth-label"
-                                                                        id="demo-simple-select-autowidth"
-                                                                        value={age}
-                                                                        onChange={handleChange}
-                                                                        autoWidth
-                                                                        label="Age"
-                                                                        className="basic_option"
-                                                                        >
-                                                                        <MenuItem value="">
-                                                                            <em>None</em>
-                                                                        </MenuItem>
-                                                                        <MenuItem value={10}>Twenty</MenuItem>
-                                                                        <MenuItem value={21}>Twenty one</MenuItem>
-                                                                        <MenuItem value={22}>Twenty one and a half</MenuItem>
-                                                                        </Select>
-                                                                    </FormControl>
+                                                                    <SelectColorBox res={res}/>
                                                                 </dd>
                                                             </dl>
                                                         </div>
@@ -93,26 +104,9 @@ export default function TOP ({res, resimage}) {
                                                 <tr>
                                                     <td colSpan="2">
                                                         <dl style={{marginTop: "0"}}>
-                                                            <dt>DELIVERY</dt>
+                                                            <dt>SIZE</dt>
                                                             <dd>
-                                                                <FormControl sx={{ m: 1, minWidth: 100 }}>
-                                                                        <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel>
-                                                                        <Select
-                                                                        labelId="demo-simple-select-autowidth-label"
-                                                                        id="demo-simple-select-autowidth"
-                                                                        value={age}
-                                                                        onChange={handleChange}
-                                                                        autoWidth
-                                                                        label="Age"
-                                                                        >
-                                                                        <MenuItem value="">
-                                                                            <em>None</em>
-                                                                        </MenuItem>
-                                                                        <MenuItem value={10}>Twenty</MenuItem>
-                                                                        <MenuItem value={21}>Twenty one</MenuItem>
-                                                                        <MenuItem value={22}>Twenty one and a half</MenuItem>
-                                                                        </Select>
-                                                                </FormControl>
+                                                                <SelectSizeBox res={res}/>
                                                             </dd>
                                                         </dl>
                                                     </td>
@@ -124,13 +118,13 @@ export default function TOP ({res, resimage}) {
                                                             <div className="MK_innerQptWrap">
                                                                 <div id="MK_innerOptScroll" className="line" style={{paddingTop: "0"}}>
                                                                     <ul id="MKinnerOpt_02" className="MK_inner-opt-cm">
-                                                                        map함수로 가져와야함
+                                                                        {/* map함수로 가져와야함 */}
                                                                     </ul>
                                                                     <ul id="MKinnerOpt_01" className="MK_inner-opt-cm">
                                                                         <li id="basic_0">
                                                                             <span className="MK_p-name">데님블루, S</span>
-                                                                            <div className="MK_qty-ctrl">수량부분올리기</div>
-                                                                            <div className="MK_btn-del">알림 기능 사용해서 x버튼 만들기</div>
+                                                                            <div className="MK_qty-ctrl"></div>
+                                                                            <div className="MK_btn-del"></div>
                                                                         </li>
                                                                     </ul>
                                                                 </div>
