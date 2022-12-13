@@ -63,9 +63,9 @@ export default function Mid({resimage, rescomment, page, setPage, setDesc}) {
         <MidDetail resimage={resimage}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <body className='renewed_widget'>
+        <div className='renewed_widget'>
           <ProductComment rescomment={rescomment} page={page} setPage={setPage} setDesc={setDesc}/>
-        </body>
+        </div>
       </TabPanel>
       <TabPanel value={value} index={2}>
         상품문의

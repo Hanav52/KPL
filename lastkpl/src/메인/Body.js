@@ -7,6 +7,7 @@ import SignIn from "../로그인&회원가입/Login";
 import RegisterTest from "../로그인&회원가입/RegisterTest";
 import DetailPage from "../상세페이지/상세페이지";
 import SubCategory from "../카테고리 별 글 목록/SubCategory";
+import MyProfile from "../프로필/MyProfile";
 import HeaderMenu from "../헤더/Header";
 import Hcompo from "../헤더/HeaderMenu";
 import CoComponent from "./ContentComponent";
@@ -16,7 +17,7 @@ function reducer(currentState, action) {
     if(currentState === undefined){
       return {
         sort: "b_views,desc",
-        categoryid: 0,
+        categoryid: localStorage.getItem("cateid"),
       }
     }
     const newSort = {...currentState};
@@ -35,6 +36,7 @@ function reducer(currentState, action) {
     }
     return newSort;
   }
+
   const store = createStore(reducer);
 
 export default function Body() {
@@ -47,6 +49,7 @@ export default function Body() {
                 <Route exact path='/'>
                   <Hcompo/>
                   <CoComponent/>
+                  <Footer/>
                 </Route>
                 <Route path='/login'>
                   <SignIn/>
@@ -57,13 +60,19 @@ export default function Body() {
                 <Route path='/cate'>
                   <Hcompo/>
                   <SubCategory/>
+                  <Footer/>
                 </Route>
                 <Route path='/detail'>
                   <Hcompo/>
                   <DetailPage/>
+                  <Footer/>
+                </Route>
+                <Route path='/profile'>
+                  <Hcompo/>
+                  <MyProfile/>
+                  <Footer/>
                 </Route>
               </Switch>
-            <Footer/>
             </Provider>
         </BrowserRouter>
         </>

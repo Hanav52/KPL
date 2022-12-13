@@ -49,7 +49,6 @@ export default function DetailPage () {
                         <div className="shop_detail" id="productDetail">
                             <TOP res={res} resimage={resimage}/>
                             <MID resimage={resimage} rescomment={rescomment} page={page} setPage={setPage} setDesc={setDesc}/>
-                            <BOT/>
                         </div>
                     </div>
                 </div>
