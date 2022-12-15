@@ -19,8 +19,6 @@ export default function Modal({setContent}) {
         init={{
           placeholder: "글 작성시 위에있는 태그 포함과 Enter를 쳐주세요",
           forced_root_block : false,
-          force_br_newlines : true,
-          force_p_newlines : false,
           deprecation_warnings: false,
           width: 500,
           height: 500,
