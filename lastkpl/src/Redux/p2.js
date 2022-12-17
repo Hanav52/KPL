@@ -1,5 +1,5 @@
 function solution(arr) {
-  var answer = [...arr[0]];
+  var answer = arr[0];
   var abc;
 
   for (var i = 1; i < arr.length; i++) {
@@ -19,3 +19,5 @@ function solution(arr) {
 
 console.log(solution("zyelleyz"));
 //완성
+
+module.exports = problem2;
