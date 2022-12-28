@@ -22,7 +22,6 @@ const Div = styled.div`
 export default function MyProfile () {
 
   const [profile, setProfile] = useState("");
-  // 회원정보API
   const UserAPI = async () => {
       try {
         const response = await getUserAPI(localStorage.getItem("Id"));
