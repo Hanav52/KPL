@@ -14,7 +14,9 @@ Jira 스프린트 & Notion을 사용하여 협업 및 일정 관리
 > 
 > HTML5, CSS3, Bootstrap5, Mui, ReactStrap
 >
-> 미정
+> node.js 아마존 서버를 사용하여 개발
+> 
+> Jira 스프린트 & Notion을 사용하여 협업 및 일정 관리
   
 ## 팀원
 <div>
@@ -38,6 +40,5 @@ Jira 스프린트 & Notion을 사용하여 협업 및 일정 관리
       </ul>
 </div>
 
-## 화면
 
 
