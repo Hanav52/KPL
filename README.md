@@ -12,7 +12,7 @@ Jira 스프린트 & Notion을 사용하여 협업 및 일정 관리
 
 > JavaScript ES6+, React
 > 
-> HTML5, CSS3, Bootstrap5, Mui, ReactStrap
+> HTML5, CSS3, Bootstrap5, Mui, ReactStrap, Redux
 >
 > node.js 아마존 서버를 사용하여 개발
 > 
